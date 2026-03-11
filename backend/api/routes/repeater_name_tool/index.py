@@ -1,5 +1,5 @@
-from denvermesh.colorado import Airports, Municipalities, UnincorporatedAreas
-from denvermesh.meshcore.models.general import RepeaterType, RepeaterSettings, RepeaterRegionSettings
+from coloradomesh.colorado import Airports, Municipalities, UnincorporatedAreas
+from coloradomesh.meshcore.models.general import RepeaterType, RepeaterSettings, RepeaterRegionSettings
 from flask import (
     Blueprint,
     render_template,
@@ -102,5 +102,5 @@ def generate_repeater_details():
         "name": name,
         "public_key_id": suggested_public_key_id,
         "import_json": import_json,
-        "import_json_file_name": f"denvermesh_meshcore_repeater_config_{name}",
+        "import_json_file_name": f"coloradomesh_meshcore_repeater_config_{name}",
     }

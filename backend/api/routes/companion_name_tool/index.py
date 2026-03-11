@@ -1,7 +1,7 @@
 import json
 
-from denvermesh.emojis import EmojiTools
-from denvermesh.meshcore.models.general import CompanionType
+from coloradomesh.emojis import EmojiTools
+from coloradomesh.meshcore.models.general import CompanionType
 from flask import (
     Blueprint,
     render_template,
@@ -78,5 +78,5 @@ def generate_companion_details():
         "name": name,
         "public_key_id": suggested_public_key_id,
         "import_json": import_json,
-        "import_json_file_name": f"denvermesh_meshcore_companion_config_{name}",
+        "import_json_file_name": f"coloradomesh_meshcore_companion_config_{name}",
     }

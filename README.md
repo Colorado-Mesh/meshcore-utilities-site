@@ -1,19 +1,19 @@
-# Denver MeshCore Utilities
+# Colorado MeshCore Utilities
 
 A web application for generating MeshCore repeater configurations.
 
-Currently hosted at: https://denvermeshcore.technicallyspeaking.tech/
+Currently hosted at: https://coloradomeshcore.technicallyspeaking.tech/
 
 ## Running with Docker
 
 ### Build the Docker image:
 ```bash
-docker build -t denver-mesh-utilities .
+docker build -t colorado-mesh-utilities .
 ```
 
 ### Run the container:
 ```bash
-docker run -p 50000:50000 denver-mesh-utilities
+docker run -p 50000:50000 colorado-mesh-utilities
 ```
 
 ### Or use Docker Compose:

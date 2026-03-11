@@ -1,7 +1,7 @@
 from typing import Optional, Any
 
-from denvermesh.emojis import EmojiTools
-from denvermesh.meshcore.models.general import RepeaterType, CompanionType
+from coloradomesh.emojis import EmojiTools
+from coloradomesh.meshcore.models.general import RepeaterType, CompanionType
 from pydantic import BaseModel, model_validator, Field, field_validator, ValidationInfo
 
 
@@ -27,7 +27,7 @@ class UserRepeaterInformation(BaseModel):
         return self
 
     def generate_name(self, public_key_id: str) -> str:
-        from denvermesh.meshcore.models.general import RepeaterName
+        from coloradomesh.meshcore.models.general import RepeaterName
 
         return RepeaterName(
             **dict(
@@ -74,7 +74,7 @@ class UserCompanionInformation(BaseModel):
         return self
 
     def generate_name(self, public_key_id: str) -> str:
-        from denvermesh.meshcore.models.general import CompanionName
+        from coloradomesh.meshcore.models.general import CompanionName
 
         return CompanionName(
             **dict(

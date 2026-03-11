@@ -1,7 +1,7 @@
-from denvermesh.meshcore.models.general import Node
-from denvermesh.meshcore.services.companions import get_denver_companions
-from denvermesh.meshcore.services.public_keys import find_free_public_key_id
-from denvermesh.meshcore.services.repeaters import get_denver_repeaters
+from coloradomesh.meshcore.models.general import Node
+from coloradomesh.meshcore.services.companions import get_denver_companions
+from coloradomesh.meshcore.services.public_keys import find_free_public_key_id
+from coloradomesh.meshcore.services.repeaters import get_denver_repeaters
 
 
 def suggest_public_key_id() -> str:

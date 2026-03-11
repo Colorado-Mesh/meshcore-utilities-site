@@ -1,6 +1,6 @@
 services:
-  denver_mesh_utilities:
-    container_name: DenverMeshUtilities
+  colorado_mesh_utilities:
+    container_name: ColoradoMeshUtilities
     build: .
     ports:
       - "50000:50000"

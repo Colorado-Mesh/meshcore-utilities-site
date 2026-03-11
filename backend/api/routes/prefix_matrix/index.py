@@ -1,9 +1,9 @@
 import json
 
-from denvermesh.internal.utils import epoch_to_datetime  # Probably shouldn't be accessing internal utils
-from denvermesh.meshcore.models.general import Node
-from denvermesh.meshcore.models.general import NodeStatus
-from denvermesh.meshcore.services.public_keys import reserved_public_key_ids
+from coloradomesh.internal.utils import epoch_to_datetime  # Probably shouldn't be accessing internal utils
+from coloradomesh.meshcore.models.general import Node
+from coloradomesh.meshcore.models.general import NodeStatus
+from coloradomesh.meshcore.services.public_keys import reserved_public_key_ids
 from flask import (
     Blueprint,
     render_template,

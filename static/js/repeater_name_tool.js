@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <p>This process will update your private key and (indirectly) your public key.</p>
 <br/>
 <p>
-<strong>Alternatively</strong>, use the <a href="https://github.com/Denver-Mesh/meshcore_repeater_configurator">DenverMesh MeshCore repeater configuration tool</a> (via Docker) to apply the configuration file to your repeater.
+<strong>Alternatively</strong>, use the <a href="https://github.com/Colorado-Mesh/meshcore_repeater_configurator">ColoradoMesh MeshCore repeater configuration tool</a> (via Docker) to apply the configuration file to your repeater.
 </p>`;
         }
 
