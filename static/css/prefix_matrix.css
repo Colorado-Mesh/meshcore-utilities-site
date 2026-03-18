@@ -53,15 +53,15 @@ body {
 }
 
 /* Table base styles - using ID for maximum specificity */
-#repeater-hex-grid {
+#node-hex-grid {
     border-collapse: collapse;
     margin: 0;
     font-family: 'Courier New', monospace;
     width: fit-content;                   /* let the table determine wrapper width */
 }
 
-#repeater-hex-grid td,
-#repeater-hex-grid th {
+#node-hex-grid td,
+#node-hex-grid th {
     width: 40px;
     height: 40px;
     min-width: 40px;
@@ -75,46 +75,46 @@ body {
     line-height: 40px;
 }
 
-#repeater-hex-grid th {
+#node-hex-grid th {
     background: #1a1a1a !important;
     color: #999 !important;
     font-weight: 600;
 }
 
 /* Cell type styles with ID selector */
-#repeater-hex-grid td.hex-free {
+#node-hex-grid td.hex-free {
     background-color: #0f3d1f !important;
     color: #22c55e !important;
     cursor: pointer;
     padding: 0 !important;
 }
 
-#repeater-hex-grid td.hex-used {
+#node-hex-grid td.hex-used {
     background-color: #5a4a24 !important;
     color: #b8860b !important;
     cursor: pointer;
 }
 
-#repeater-hex-grid td.hex-reserved {
+#node-hex-grid td.hex-reserved {
     background-color: #3a3a3a !important;
     color: #888 !important;
     cursor: pointer;
 }
 
-#repeater-hex-grid td.hex-backbone {
+#node-hex-grid td.hex-backbone {
     background-color: #4a4a4a !important;
     color: #aaa !important;
     cursor: pointer;
 }
 
-#repeater-hex-grid td.hex-duplicate {
+#node-hex-grid td.hex-duplicate {
     background-color: #5c1a1a !important;
     color: #ef4444 !important;
     cursor: pointer;
 }
 
 /* Reserved + in-use should be visually black */
-#repeater-hex-grid td.hex-reserved-in-use,
+#node-hex-grid td.hex-reserved-in-use,
 #subgrid-hex-grid td.hex-reserved-in-use {
     background-color: #000 !important;
     color: #f5f5f5 !important;
@@ -122,7 +122,7 @@ body {
 }
 
 /* Dim reserved + in-use when inactive (primary + secondary) */
-#repeater-hex-grid td.hex-reserved-in-use.hex-inactive,
+#node-hex-grid td.hex-reserved-in-use.hex-inactive,
 #subgrid-hex-grid td.hex-reserved-in-use.hex-inactive {
     background-color: #161616 !important;
     color: #cfcfcf !important;
@@ -130,20 +130,20 @@ body {
     filter: grayscale(35%) !important;
 }
 
-/* Inactive state - dimmed color for repeaters not heard in 7+ days */
-#repeater-hex-grid td.hex-inactive {
+/* Inactive state - dimmed color for nodes not heard in 7+ days */
+#node-hex-grid td.hex-inactive {
     opacity: 0.5 !important;
     filter: grayscale(40%) !important;
 }
 
 /* Dimmed/highlighted states for search */
-#repeater-hex-grid td.hex-dimmed {
+#node-hex-grid td.hex-dimmed {
     opacity: 0.2;
     filter: grayscale(50%);
     transition: all 0.3s ease;
 }
 
-#repeater-hex-grid td.hex-highlighted {
+#node-hex-grid td.hex-highlighted {
     opacity: 1;
     filter: none;
     box-shadow: 0 0 12px rgba(34, 197, 94, 0.6);
@@ -166,11 +166,11 @@ body {
     line-height: 1;
 }
 
-#repeater-hex-grid td.hex-free:hover .hex-clickable,
-#repeater-hex-grid td.hex-used:hover .hex-clickable,
-#repeater-hex-grid td.hex-duplicate:hover .hex-clickable,
-#repeater-hex-grid td.hex-reserved:hover .hex-clickable,
-#repeater-hex-grid td.hex-backbone:hover .hex-clickable {
+#node-hex-grid td.hex-free:hover .hex-clickable,
+#node-hex-grid td.hex-used:hover .hex-clickable,
+#node-hex-grid td.hex-duplicate:hover .hex-clickable,
+#node-hex-grid td.hex-reserved:hover .hex-clickable,
+#node-hex-grid td.hex-backbone:hover .hex-clickable {
     font-size: 16px;
     font-weight: 700;
 }
@@ -658,28 +658,28 @@ h2.hex-info-title {
 }
 
 /* Material theme overrides using ID selector (highest specificity) */
-.md-typeset #repeater-hex-grid td {
+.md-typeset #node-hex-grid td {
     background-color: transparent;
     border-color: #1a1a1a !important;
 }
 
-.md-typeset #repeater-hex-grid td.hex-free {
+.md-typeset #node-hex-grid td.hex-free {
     background-color: #0f3d1f !important;
     color: #22c55e !important;
 }
-.md-typeset #repeater-hex-grid td.hex-used {
+.md-typeset #node-hex-grid td.hex-used {
     background-color: #5a4a24 !important;
     color: #b8860b !important;
 }
-.md-typeset #repeater-hex-grid td.hex-reserved {
+.md-typeset #node-hex-grid td.hex-reserved {
     background-color: #3a3a3a !important;
     color: #888 !important;
 }
-.md-typeset #repeater-hex-grid td.hex-backbone {
+.md-typeset #node-hex-grid td.hex-backbone {
     background-color: #4a4a4a !important;
     color: #aaa !important;
 }
-.md-typeset #repeater-hex-grid td.hex-duplicate {
+.md-typeset #node-hex-grid td.hex-duplicate {
     background-color: #5c1a1a !important;
     color: #ef4444 !important;
 }
@@ -749,7 +749,7 @@ h2.hex-info-title {
     padding: 0.2rem 0.25rem;
 }
 
-/* Badge showing repeater count on primary grid cells */
+/* Badge showing node count on primary grid cells */
 .hex-count {
     display: inline-block;
     background: rgba(255,255,255,0.15);
@@ -847,8 +847,8 @@ h2.hex-info-title {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    #repeater-hex-grid td,
-    #repeater-hex-grid th {
+    #node-hex-grid td,
+    #node-hex-grid th {
         width: 32px;
         height: 32px;
         min-width: 32px;
@@ -860,16 +860,16 @@ h2.hex-info-title {
         line-height: 32px;
     }
 
-    #repeater-hex-grid td.hex-free .hex-clickable {
+    #node-hex-grid td.hex-free .hex-clickable {
         font-size: 10px;
     }
 
     /* Disable hover effects on mobile */
-    #repeater-hex-grid td.hex-free:hover .hex-clickable,
-    #repeater-hex-grid td.hex-used:hover .hex-clickable,
-    #repeater-hex-grid td.hex-duplicate:hover .hex-clickable,
-    #repeater-hex-grid td.hex-reserved:hover .hex-clickable,
-    #repeater-hex-grid td.hex-backbone:hover .hex-clickable {
+    #node-hex-grid td.hex-free:hover .hex-clickable,
+    #node-hex-grid td.hex-used:hover .hex-clickable,
+    #node-hex-grid td.hex-duplicate:hover .hex-clickable,
+    #node-hex-grid td.hex-reserved:hover .hex-clickable,
+    #node-hex-grid td.hex-backbone:hover .hex-clickable {
         font-size: 10px;
         font-weight: 500;
     }

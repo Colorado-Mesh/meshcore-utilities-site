@@ -24,12 +24,12 @@
         </a>
         <div style="margin-top: 30px;">
             <h2 style="font-size: 18px; margin-bottom: 15px; color: #2c3e50;">Shortcuts</h2>
-            <button class="quickstart-button" id="downloadRepeaterContacts">📥 Download Repeater Contacts</button>
+            <button class="quickstart-button" id="downloadContacts">📥 Download Contacts</button>
         </div>
 
         <script>
-            document.getElementById('downloadRepeaterContacts').addEventListener('click', function () {
-                fetch('./repeater_contacts')
+            document.getElementById('downloadContacts').addEventListener('click', function () {
+                fetch('./contacts')
                     .then(response => response.json())
                     .then(data => {
                         // Convert JSON to string
@@ -42,7 +42,7 @@
                         const url = URL.createObjectURL(blob);
                         const a = document.createElement('a');
                         a.href = url;
-                        a.download = 'denver_repeaters.json';
+                        a.download = 'colorado_meshcore_contacts.json';
 
                         // Trigger download
                         document.body.appendChild(a);

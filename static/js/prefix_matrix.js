@@ -1,33 +1,33 @@
 // Modal functions for hex grid
-function _buildInfoCard(repeater) {
-    const reservedWarning = repeater.is_reserved_id
+function _buildInfoCard(node) {
+    const reservedWarning = node.is_reserved_id
         ? `<p class="hex-reserved-warning">⚠ Reserved ID in use</p>`
         : '';
 
     return `
         <div class="hex-info-card">
             <div class="hex-info-header">
-                <span class="hex-id-badge hex-used-badge">${repeater.id}</span>
-                <span class="hex-state-badge hex-state-${repeater.status}">${repeater.status_value}</span>
+                <span class="hex-id-badge hex-used-badge">${node.id}</span>
+                <span class="hex-state-badge hex-state-${node.status}">${node.status_value}</span>
             </div>
             ${reservedWarning}
-            <h2 class="hex-info-title">${repeater.name}</h2>
+            <h2 class="hex-info-title">${node.name}</h2>
             <div class="hex-info-grid">
                 <div class="hex-info-item">
                     <span class="hex-info-label">🔑 Public Key</span>
-                    <span class="hex-info-value">${repeater.public_key}</span>
+                    <span class="hex-info-value">${node.public_key}</span>
                 </div>
                 <div class="hex-info-item">
                     <span class="hex-info-label">📍 Location</span>
-                    <span class="hex-info-value">${repeater.location}</span>
+                    <span class="hex-info-value">${node.location}</span>
                 </div>
                 <div class="hex-info-item">
                     <span class="hex-info-label">🕐 Last Heard</span>
-                    <span class="hex-info-value">${repeater.last_heard}</span>
+                    <span class="hex-info-value">${node.last_heard}</span>
                 </div>
             </div>
             <div class="hex-info-contact">
-                <a href="${repeater.contact_url}" class="hex-contact-btn">Add Contact</a>
+                <a href="${node.contact_url}" class="hex-contact-btn">Add Contact</a>
             </div>
         </div>
     `
@@ -41,7 +41,7 @@ function _buildAvailableCard(hexId) {
                 <span class="hex-state-badge hex-state-available">Available</span>
             </div>
             <h2 class="hex-info-title">This ID is available!</h2>
-            <p class="hex-info-description">No repeater is currently using this ID. You can assign it to a new repeater.</p>
+            <p class="hex-info-description">No node is currently using this ID. You can assign it to a new repeater.</p>
             <div class="hex-info-contact">
                 <a href="/repeater_name_tool?id=${hexId}" class="hex-contact-btn">Add New Repeater</a>
             </div>
@@ -58,22 +58,22 @@ function showAvailableInfo(hexId) {
     modal.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-function showRepeaterInfo(hexId, repeater) {
+function showNodeInfo(hexId, node) {
     const modal = document.getElementById('hex-modal');
     const modalBody = document.getElementById('hex-modal-body');
 
-    modalBody.innerHTML = _buildInfoCard(repeater);
+    modalBody.innerHTML = _buildInfoCard(node);
     modal.style.display = 'block';
     modal.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-function showDuplicateInfo(hexId, repeaters) {
+function showDuplicateInfo(hexId, nodes) {
     const modal = document.getElementById('hex-modal');
     const modalBody = document.getElementById('hex-modal-body');
 
     let entriesHtml = '';
-    repeaters.forEach((repeater, idx) => {
-        entriesHtml += _buildInfoCard(repeater);
+    nodes.forEach((node, idx) => {
+        entriesHtml += _buildInfoCard(node);
     });
 
     modalBody.innerHTML = `
@@ -82,7 +82,7 @@ function showDuplicateInfo(hexId, repeaters) {
                 <span class="hex-id-badge hex-duplicate-badge">${hexId}</span>
                 <span class="hex-warning-badge">⚠️ DUPLICATE CONFLICT</span>
             </div>
-            <p class="hex-duplicate-warning">Multiple repeaters are using the same ID. This must be resolved!</p>
+            <p class="hex-duplicate-warning">Multiple nodes are using the same ID. This must be resolved!</p>
             <div class="hex-duplicates-container">
                 ${entriesHtml}
             </div>
@@ -246,7 +246,7 @@ function performSearch(query) {
     if (!searchResults) return;
 
     if (matchCount > 0) {
-        searchResults.textContent = `Found ${matchCount} matching repeater${matchCount !== 1 ? 's' : ''} out of ${totalSearchable}`;
+        searchResults.textContent = `Found ${matchCount} matching nodes${matchCount !== 1 ? 's' : ''} out of ${totalSearchable}`;
         searchResults.style.color = '#a8d68c';
     } else {
         searchResults.textContent = `No matches found for "${normalizedQuery}"`;
@@ -279,7 +279,7 @@ document.addEventListener('DOMContentLoaded', function() {
     searchInput = document.getElementById('hex-search');
     searchClear = document.getElementById('hex-search-clear');
     searchResults = document.getElementById('hex-search-results');
-    primaryTable = document.getElementById('repeater-hex-grid');
+    primaryTable = document.getElementById('node-hex-grid');
     subgridTable = document.getElementById('subgrid-hex-grid');
 
     if (!searchInput || !searchClear || !searchResults || !primaryTable || !subgridTable) return;

@@ -5,7 +5,7 @@ from flask import Flask, render_template
 from backend.api.routes.repeater_name_tool.index import repeater_name_tool
 from backend.api.routes.companion_name_tool.index import companion_name_tool
 from backend.api.routes.prefix_matrix.index import prefix_matrix
-from backend.api.services.repeater_contacts import prepare_repeater_contacts
+from backend.api.services.contacts import prepare_contacts
 from backend.constants import FLASK_HOST, FLASK_PORT, FLASK_GET
 
 app = Flask(__name__)
@@ -20,13 +20,13 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/repeater_contacts', methods=[FLASK_GET])
-def get_repeater_contacts():
+@app.route('/contacts', methods=[FLASK_GET])
+def get_contacts():
     """
-    Send a JSON file with all contacts for repeaters in the Denver area
-    return: A JSON object with a list of contacts for repeaters in the Denver area
+    Send a JSON file with all contacts in Colorado.
+    return: A JSON object with a list of contacts in Colorado.
     """
-    data = prepare_repeater_contacts()
+    data = prepare_contacts()
     return json.dumps(data)
 
 
