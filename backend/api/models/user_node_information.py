@@ -2,7 +2,6 @@ from typing import Optional, Any
 
 from coloradomesh.emojis import EmojiTools
 from coloradomesh.meshcore.models.general import RepeaterType, CompanionType
-from denvermesh.colorado import Municipalities, UnincorporatedAreas
 from pydantic import BaseModel, model_validator, Field, field_validator, ValidationInfo
 
 
@@ -41,7 +40,8 @@ class UserRepeaterInformation(BaseModel):
                 repeater_type=self.node_type,
                 region=region_code,
                 city=self.city,
-                landmark=self.landmark if self.city else self.mountain,  # Mountain will be the "landmark" if not using city
+                landmark=self.landmark if self.city else self.mountain,
+                # Mountain will be the "landmark" if not using city
                 public_key_id=public_key_id
             )
         ).formatted
