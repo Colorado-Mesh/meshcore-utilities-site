@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <title>MeshCore Utilities</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/dark_mode.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/prefix_matrix.css') }}">
     <script src="{{ url_for('static', filename='js/prefix_matrix.js') }}"></script>
@@ -68,6 +69,9 @@
         </div>
     </div>
 </div>
+<footer class="github-footer">
+    Built for ColoradoMesh • <a href="https://github.com/Colorado-Mesh" target="_blank" rel="noopener noreferrer">github.com/Colorado-Mesh</a>
+</footer>
 
 <!-- Embed all sub-matrix data as JSON for JS to consume -->
 <script id="matrix-data-json" type="application/json">
