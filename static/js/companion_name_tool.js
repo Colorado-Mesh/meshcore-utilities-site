@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Handle suffix strategy changes
     strategyRadios.forEach(radio => {
-        radio.addEventListener('change', function() {
+        radio.addEventListener('change', function () {
             suffixStrategy.style.display = 'none';
             numberInput.style.display = 'none';
             roleTypeSelect.value = '';
@@ -49,7 +49,8 @@ document.addEventListener('DOMContentLoaded', function () {
         if (numberInput.offsetParent !== null) { // Check if visible
             const value = parseInt(numberInput.value);
             if (isNaN(value) || value < 1 || value > 99) {
-                e.preventDefault();alert('Please enter a number between 1 and 99');
+                e.preventDefault();
+                alert('Please enter a number between 1 and 99');
             }
         }
 
@@ -67,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
     handleInput.addEventListener('input', validateForm);
     roleTypeSelect.addEventListener('change', validateForm);
     suffixNumberInput.addEventListener('input', validateForm);
-    suffixNumberInput.addEventListener('input', function(e) {
+    suffixNumberInput.addEventListener('input', function (e) {
         if (this.value > 99) {
             this.value = 99;
         }
@@ -87,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!validateForm()) {
             validationError.style.display = 'block';
             // Scroll to error message
-            validationError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            validationError.scrollIntoView({behavior: 'smooth', block: 'nearest'});
             return;
         }
 
@@ -115,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (res.ok) {
                 const result = await res.json();
-                displayResult(result);
+                displaySuccess(result);
             } else {
                 throw new Error('Failed to generate configuration');
             }
@@ -127,164 +128,114 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    function displayResult(data) {
-        // Clear previous content
-        resultDiv.innerHTML = '';
-        resultDiv.className = 'success';
 
-        // Create header
-        const header = document.createElement('div');
-        header.className = 'result-header';
-        const headerTitle = document.createElement('h2');
-        headerTitle.textContent = '✓ Configuration Generated';
-        header.appendChild(headerTitle);
+    function scrollToElement(element) {
+        element.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+    }
 
-        // Create content container
-        const content = document.createElement('div');
-        content.className = 'result-content';
+    function scrollToElementId(elementId) {
+        let element = document.getElementById(elementId);
+        scrollToElement(element);
+    }
 
-        // Create node name field
-        const nameField = createResultField('Node Name:', data.name, 'node-name');
-        content.appendChild(nameField);
-
-        // Create public key ID field
-        const keyField = createResultField('Public Key ID:', data.public_key_id, 'public-key-id');
-        content.appendChild(keyField);
-
-        // Create generate keys button
-        const generateKeysLink = document.createElement('a');
-        generateKeysLink.href = `https://gessaman.com/mc-keygen/?prefix=${data.public_key_id}`;
-        generateKeysLink.target = '_blank';
-        generateKeysLink.className = 'generate-keys-btn';
-        generateKeysLink.textContent = 'Generate Public & Private Keys →';
-        content.appendChild(generateKeysLink);
-
-        // Create explanation field for keys
-        const explanationField = document.createElement('div');
-        explanationField.className = 'explanation-box';
-        explanationField.innerHTML = '<p>Paste your public and private key below to include it in your configuration file.</p><p><strong>NOTE:</strong> These values will remain local and will <strong>NOT</strong> be transmitted or stored.</p>';
-        content.appendChild(explanationField);
-
-
-        // Create public key input field
-        const publicKeyField = createKeyInputField('Public Key:', 'public-key-input', 'Paste your public key here');
-        content.appendChild(publicKeyField);
-
-        // Create private key input field
-        const privateKeyField = createKeyInputField('Private Key:', 'private-key-input', 'Paste your private key here');
-        content.appendChild(privateKeyField);
-
-        // Create key update steps
-        const keyUpdateSteps = document.createElement('div');
-        keyUpdateSteps.className = 'explanation-box';
-        function updateKeySteps() {
-            keyUpdateSteps.innerHTML = `<p><strong>To update your keys:</strong></p><ol><li>Download your configuration file below and copy it to your phone.</li><li>Open the MeshCore app on your phone and connect your companion device.</li><li>Click the gear icon (⚙️) and scroll down to "Import Config" under "Extra Tools".</li><li>Select the JSON file you downloaded, then check "Name", "Private Identity Key" and "Radio Settings". Make sure all other settings are unchecked.</li><li>Click the check icon (✔️) at the top of the screen to apply the settings.</li></ol><p>This process will update your device's name, public key and private key, effectively giving it a new identity on the mesh.</p>`;
-        }
-        content.appendChild(keyUpdateSteps);
-
-        // Create actions section
-        const actions = document.createElement('div');
-        actions.className = 'result-actions';
-
-        const downloadBtn = document.createElement('button');
-        downloadBtn.type = 'button';
-        downloadBtn.className = 'download-btn';
-        downloadBtn.textContent = '⬇ Download Configuration';
-        downloadBtn.addEventListener('click', () => {
-            const publicKey = document.getElementById('public-key-input').value;
-            const privateKey = document.getElementById('private-key-input').value;
-            downloadJSON(data.import_json, data.import_json_file_name, publicKey, privateKey);
-        });
-
-        actions.appendChild(downloadBtn);
-        content.appendChild(actions);
-
-        // Append everything to result div
-        resultDiv.appendChild(header);
-        resultDiv.appendChild(content);
+    function scrollToResults() {
+        // Scroll to results div
         resultDiv.style.display = 'block';
-        resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-        // Trigger private key steps update
-        updateKeySteps();
-        document.getElementById('private-key-input').addEventListener('input', updateKeySteps);
+        scrollToElement(resultDiv);
     }
 
-    function createResultField(labelText, value, id) {
-        const field = document.createElement('div');
-        field.className = 'result-field';
-
-        const label = document.createElement('label');
-        label.textContent = labelText;
-
-        const valueContainer = document.createElement('div');
-        valueContainer.className = 'result-value';
-
-        const code = document.createElement('code');
-        code.id = id;
-        code.textContent = value;
-
-        const copyBtn = document.createElement('button');
-        copyBtn.className = 'copy-btn';
-        copyBtn.textContent = 'Copy';
-        copyBtn.addEventListener('click', () => copyToClipboard(id));
-
-        valueContainer.appendChild(code);
-        valueContainer.appendChild(copyBtn);
-        field.appendChild(label);
-        field.appendChild(valueContainer);
-
-        return field;
-    }
-
-    function createKeyInputField(labelText, id, placeholder) {
-        const field = document.createElement('div');
-        field.className = 'result-field';
-
-        const label = document.createElement('label');
-        label.textContent = labelText;
-
-        const input = document.createElement('textarea');
-        input.id = id;
-        input.className = 'key-input';
-        input.placeholder = placeholder;
-
-        field.appendChild(label);
-        field.appendChild(input);
-
-        return field;
+    function clearError() {
+        // Hide the resultsError (no need to clear the content)
+        let resultsError = document.getElementById('results-error');
+        resultsError.style.display = 'none';
     }
 
     function displayError(message) {
-        // Clear previous content
-        resultDiv.innerHTML = '';
-        resultDiv.className = 'error';
+        // Populate the results-error div
+        let resultsError = document.getElementById('results-error');
+        let resultsErrorMessage = document.getElementById('result-error-message');
 
-        // Create error header
-        const header = document.createElement('div');
-        header.className = 'result-header error';
-        const headerTitle = document.createElement('h2');
-        headerTitle.textContent = '⚠ Error';
-        header.appendChild(headerTitle);
+        resultsErrorMessage.innerText = message;
 
-        // Create error content
-        const content = document.createElement('div');
-        content.className = 'result-content';
-        const errorMsg = document.createElement('p');
-        errorMsg.textContent = message;
-        content.appendChild(errorMsg);
+        resultsError.style.display = 'block';
+        scrollToResults()
+    }
 
-        // Append to result div
-        resultDiv.appendChild(header);
-        resultDiv.appendChild(content);
-        resultDiv.style.display = 'block';
-        resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    function clearSuccess() {
+        // Hide the resultsSuccess (no need to clear the content)
+        let resultsSuccess = document.getElementById('results-success');
+        resultsSuccess.style.display = 'none';
+    }
+
+    function displaySuccess(data) {
+        // Populate the results-success div
+        let nodeName = data.name;
+        let publicKeyId = data.public_key_id;
+        let resultsSuccess = document.getElementById('results-success');
+        let resultsNodeName = document.getElementById('result-node-name');
+        let resultsNodeNameCopyBtn = document.getElementById('result-node-name-copy-btn');
+        let resultsPublicKeyId = document.getElementById('result-public-key-id');
+        let resultsPublicKeyIdCopyBtn = document.getElementById('result-public-key-id-copy-btn');
+        let resultsPublicKey = document.getElementById('result-public-key');
+        let resultsPublicKeyCopyBtn = document.getElementById('result-public-key-copy-btn');
+        let resultsPrivateKey = document.getElementById('result-private-key');
+        let resultsPrivateKeyCopyBtn = document.getElementById('result-private-key-copy-btn');
+        let resultsGenerateKeysBtn = document.getElementById('result-generate-keys-btn');
+        let resultsKeyUpdateExplainer = document.getElementById('result-key-update-explainer');
+        let resultsActions = document.getElementById('result-actions');
+        let resultsDownloadConfigBtn = document.getElementById('result-config-download-button');
+
+        resultsKeyUpdateExplainer.style.display = 'none';
+        resultsActions.style.display = 'none';
+
+        resultsNodeName.textContent = nodeName;
+        resultsNodeNameCopyBtn.addEventListener('click', () => copyButtonClicked(resultsNodeName.id));
+        resultsPublicKeyId.textContent = publicKeyId;
+        resultsPublicKeyIdCopyBtn.addEventListener('click', () => copyButtonClicked(resultsPublicKeyId.id));
+
+        resultsPublicKey.value = '';
+        resultsPrivateKey.value = '';
+        resultsPublicKeyCopyBtn.addEventListener('click', () => copyButtonClicked(resultsPublicKey.id));
+        resultsPrivateKeyCopyBtn.addEventListener('click', () => copyButtonClicked(resultsPrivateKey.id));
+
+        const estimatedGenerationTimeText = getKeyPairGenerationTimeEstimate(publicKeyId);
+        const btnContent = `Generate Public & Private Keys (~${estimatedGenerationTimeText})`;
+        resultsGenerateKeysBtn.textContent = btnContent;
+        resultsGenerateKeysBtn.addEventListener('click', async () => {
+            try {
+                resultsGenerateKeysBtn.disabled = true;
+                resultsGenerateKeysBtn.textContent = 'Generating keys...';
+
+                const generated = await generateKeyPair(publicKeyId);
+                resultsPublicKey.value = generated.publicKey;
+                resultsPrivateKey.value = generated.privateKey;
+                resultsKeyUpdateExplainer.style.display = 'block';
+                resultsActions.style.display = 'block';
+                scrollToElement(resultsDownloadConfigBtn);
+            } catch (error) {
+                displayError(error.message || 'Failed to generate key pair');
+            } finally {
+                resultsGenerateKeysBtn.disabled = false;
+                resultsGenerateKeysBtn.textContent = btnContent;
+            }
+        });
+        resultsDownloadConfigBtn.addEventListener('click', () => {
+            downloadJSON(data.import_json, data.import_json_file_name, resultsPublicKey.value, resultsPrivateKey.value);
+        });
+
+        resultsSuccess.style.display = 'block';
+        scrollToResults()
     }
 
     function copyToClipboard(elementId) {
         const element = document.getElementById(elementId);
         const text = element.textContent;
-        navigator.clipboard.writeText(text).then(() => {
+        return navigator.clipboard.writeText(text);
+    }
+
+    function copyButtonClicked(elementId) {
+        const element = document.getElementById(elementId);
+        copyToClipboard(elementId).then(() => {
             const button = element.nextElementSibling;
             const originalText = button.textContent;
             button.textContent = 'Copied!';
@@ -294,6 +245,47 @@ document.addEventListener('DOMContentLoaded', function () {
                 button.classList.remove('copied');
             }, 2000);
         });
+    }
+
+    function showError(message) {
+        alert(message); // Yes, this is janky
+        // errorContainer.textContent = message;
+        // errorContainer.style.display = 'block';
+    }
+
+    function getKeyPairGenerationTimeEstimate(prefix) {
+        return keyGenerator.estimateTimeText(prefix.length);
+    }
+
+    async function generateKeyPair(prefix) {
+        if (typeof keyGenerator === 'undefined') {
+            showError('Key generator is not loaded.');
+        }
+
+        // Check if Web Crypto API is available
+        if (typeof crypto === 'undefined' || typeof crypto.subtle === 'undefined') {
+            showError('Web Crypto API is not available in this browser.');
+        }
+
+        // Sanitize input
+        prefix = prefix.trim().toUpperCase();
+        if (prefix.length === 0 || prefix.length > 8) {
+            showError('Prefix must be between 1 and 8 characters long.');
+        }
+        if (!/^[0-9A-F]+$/.test(prefix)) {
+            showError('Prefix must contain only hexadecimal characters (0-9, A-F).');
+        }
+
+        await keyGenerator.initialize();
+        const result = await keyGenerator.generateVanityKey(prefix, []);
+        if (!result) {
+            showError('Key generation failed. Please refresh the page and try again.');
+        }
+
+        return {
+            publicKey: result.publicKey,
+            privateKey: result.privateKey
+        };
     }
 
     function downloadJSON(importJson, fileName, publicKey, privateKey) {
@@ -309,7 +301,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         const jsonString = JSON.stringify(jsonData, null, 2);
-        const blob = new Blob([jsonString], { type: 'application/json' });
+        const blob = new Blob([jsonString], {type: 'application/json'});
         const url = URL.createObjectURL(blob);
         const link = document.createElement('a');
         link.href = url;

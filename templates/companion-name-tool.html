@@ -4,6 +4,7 @@
     <title>MeshCore Utilities</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/dark_mode.css') }}">
+    <script src="{{ url_for('static', filename='js/meshcore-key-generator.js') }}"></script>
     <script src="{{ url_for('static', filename='js/companion_name_tool.js') }}"></script>
 </head>
 <body>
@@ -107,7 +108,83 @@
 
     </form>
 
-    <div id="result"></div>
+    <div id="result" style="display: none;">
+        <div id="results-error" class="error" style="display: none;">
+            <div class="result-header error">
+                <h2>⚠ Error</h2>
+            </div>
+            <div class="result-content">
+                <p id="result-error-message"></p>
+            </div>
+        </div>
+        <div id="results-success" class="success" style="display: none;">
+            <div class="result-header">
+                <h2>✓ Configuration Generated</h2>
+            </div>
+            <div class="result-content">
+                <div class="result-field">
+                    <label>Node Name:</label>
+                    <div class="result-value">
+                        <code id="result-node-name"></code>
+                        <button id="result-node-name-copy-btn" class="copy-btn">Copy</button>
+                    </div>
+                </div>
+
+                <div class="result-field">
+                    <label>Public Key ID:</label>
+                    <div class="result-value">
+                        <code id="result-public-key-id"></code>
+                        <button id="result-public-key-id-copy-btn" class="copy-btn">Copy</button>
+                    </div>
+                </div>
+
+                <div class="result-field">
+                    <label for="result-public-key">Public Key:</label>
+                    <div class="result-value">
+                        <textarea id="result-public-key" readonly rows="3" style="width: 100%;"></textarea>
+                        <button id="result-public-key-copy-btn" class="copy-btn">Copy</button>
+                    </div>
+                </div>
+
+                <div class="result-field">
+                    <label for="result-private-key">Private Key:</label>
+                    <div class="result-value">
+                        <textarea id="result-private-key" readonly rows="4" style="width: 100%;"></textarea>
+                        <button id="result-private-key-copy-btn" class="copy-btn">Copy</button>
+                    </div>
+                </div>
+
+                <br/>
+
+                <button type="button" id="result-generate-keys-btn">Generate Public & Private Keys</button>
+                <span class="help-text">
+                    These keys are generated client-side. No data is saved or transmitted to a server.
+                </span>
+
+                <br/>
+
+                <div class="result-field" id="result-key-update-explainer" style="display: none;">
+                    <h3 style="text-align: left">How to set your keys:</h3>
+
+                    <ol style="list-style-position: inside;">
+                        <li>Download your configuration file below and copy it to your phone.</li>
+                        <li>Open the MeshCore app on your phone and connect your companion device.</li>
+                        <li>Click the gear icon (⚙️) and scroll down to "Import Config" under "Extra Tools".</li>
+                        <li>Select the JSON file you downloaded, then check "Name", "Private Identity Key" and "Radio Settings". Make sure all other settings are unchecked.</li>
+                        <li>Click the check icon (✔️) at the top of the screen to apply the settings.</li>
+                    </ol>
+                    <br/>
+                    <p>This process will update your device's name, public key and private key, effectively giving it a new identity on the mesh.</p>
+                </div>
+
+                <div id="result-actions" class="result-actions" style="display: none;">
+                    <button type="button" class="download-btn" id="result-config-download-button">⬇ Download
+                        Configuration
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
