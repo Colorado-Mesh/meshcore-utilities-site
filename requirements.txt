@@ -1,5 +1,5 @@
 Flask==3.1.2
 pydantic==2.12.5
 objectrest==2.0.0
-coloradomesh==0.6.1
+coloradomesh==0.6.2
 geopy
