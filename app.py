@@ -12,6 +12,7 @@ from werkzeug.middleware.proxy_fix import ProxyFix
 from backend.api.routes.companion_name_tool.index import companion_name_tool
 from backend.api.routes.prefix_matrix.index import prefix_matrix
 from backend.api.routes.repeater_name_tool.index import repeater_name_tool
+from backend.api.routes.serial_usb_tool.index import serial_usb_tool
 from backend.api.services.contacts import prepare_contacts, ContactsOrder, ContactsType, ContactsStatus
 from backend.api.services.meshcore_stats import StatsService
 from backend.constants import FLASK_HOST, FLASK_PORT, FLASK_GET
@@ -36,6 +37,7 @@ if server_name:
 app.register_blueprint(repeater_name_tool)
 app.register_blueprint(companion_name_tool)
 app.register_blueprint(prefix_matrix)
+app.register_blueprint(serial_usb_tool)
 
 
 # Landing page

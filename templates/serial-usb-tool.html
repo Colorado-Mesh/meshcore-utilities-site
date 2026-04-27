@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MeshCore Utilities</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/serial_usb_tool.css') }}">
+    <script src="{{ url_for('static', filename='js/serial_usb_tool_page.js') }}" defer></script>
+</head>
+<body class="serial-tool-page">
+<div class="container serial-tool-container">
+    <h1>🔌 Serial USB Command Console</h1>
+    <p class="subtitle">
+        Load a JSON command profile, connect to a USB serial device, and run commands with a single click.
+        <br>
+        <small style="font-size: 13px; opacity: 0.8;">
+            Web Serial works in secure contexts only (HTTPS or localhost) and requires a Chromium-based browser.
+        </small>
+    </p>
+
+    <div id="serial-support-banner" class="validation-message serial-banner" style="display: none;"></div>
+
+    <div class="serial-status-panel">
+        <div class="serial-status-row">
+            <div>
+                <div class="serial-label">Connection status</div>
+                <div id="serial-status" class="serial-status-pill serial-status-idle">Disconnected</div>
+            </div>
+            <div>
+                <div class="serial-label">Current profile</div>
+                <div id="serial-profile-name" class="serial-mono">Loading…</div>
+            </div>
+            <div>
+                <div class="serial-label">Port settings</div>
+                <div id="serial-port-settings" class="serial-mono">Loading…</div>
+            </div>
+        </div>
+        <div id="serial-profile-description" class="help-text serial-profile-description"></div>
+    </div>
+
+    <div class="serial-toolbar">
+        <button type="button" id="serial-connect-btn">Connect USB Serial</button>
+        <button type="button" id="serial-disconnect-btn" class="secondary-button" disabled>Disconnect</button>
+        <button type="button" id="serial-clear-log-btn" class="secondary-button">Clear Log</button>
+    </div>
+
+    <div class="serial-grid">
+        <section class="serial-panel">
+            <h2>Command Buttons</h2>
+            <p class="help-text">Each button below is generated from <code>static/data/serial_commands.json</code>.</p>
+            <div id="serial-command-list" class="serial-command-list"></div>
+        </section>
+
+        <section class="serial-panel">
+            <h2>Device Log</h2>
+            <p class="help-text">Sent commands and incoming serial responses appear here.</p>
+            <pre id="serial-log" class="serial-log" aria-live="polite"></pre>
+        </section>
+    </div>
+
+    <div class="serial-panel serial-notes-panel">
+        <h2>How it works</h2>
+        <ol class="serial-notes-list">
+            <li>Click <strong>Connect USB Serial</strong> and choose your device.</li>
+            <li>Use the generated command buttons to send the configured serial commands.</li>
+            <li>Commands, line endings, and delays are all controlled by the JSON config.</li>
+        </ol>
+    </div>
+</div>
+
+<footer class="github-footer">
+    Built for Colorado Mesh • <a href="https://github.com/Colorado-Mesh" target="_blank" rel="noopener noreferrer">github.com/Colorado-Mesh</a>
+</footer>
+
+<script>
+    window.SERIAL_TOOL_CONFIG_URL = {{ url_for('static', filename='data/serial_commands.json') | tojson }};
+</script>
+</body>
+</html>
+

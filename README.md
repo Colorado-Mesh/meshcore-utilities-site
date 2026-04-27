@@ -1,6 +1,6 @@
 # Colorado Mesh MeshCore Utilities
 
-A web application for generating MeshCore repeater configurations.
+A web application for generating MeshCore repeater configurations and sending canned serial USB commands to connected devices.
 
 Currently hosted at: https://tools.meshcore.coloradomesh.org
 
@@ -43,4 +43,11 @@ To run locally without Docker:
 pip install -r requirements.txt
 python app.py
 ```
+
+## Features
+
+- Repeater configuration generator
+- Companion configuration generator
+- Prefix matrix browser
+- Serial USB command console driven by `static/data/serial_commands.json`
 

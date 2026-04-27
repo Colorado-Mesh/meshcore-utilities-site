@@ -1,0 +1,39 @@
+{
+  "name": "MeshCore USB Command Profile",
+  "description": "Canned serial commands for common device actions. Connect a compatible device, then click a button to send the configured command sequence.",
+  "serial": {
+    "baudRate": 115200,
+    "dataBits": 8,
+    "stopBits": 1,
+    "parity": "none",
+    "flowControl": "none",
+    "defaultLineEnding": "CRLF"
+  },
+  "actions": [
+    {
+      "id": "status",
+      "label": "Request Status",
+      "description": "Ask the connected device for a current status report.",
+      "command": "STATUS"
+    },
+    {
+      "id": "version",
+      "label": "Read Version",
+      "description": "Request firmware version and device metadata.",
+      "steps": [
+        { "type": "send", "command": "VERSION" },
+        { "type": "wait", "delayMs": 250 },
+        { "type": "send", "command": "INFO" }
+      ]
+    },
+    {
+      "id": "reboot",
+      "label": "Reboot Device",
+      "description": "Send a reboot command to the connected device. Use carefully.",
+      "confirm": true,
+      "confirmMessage": "Send a reboot command to the connected device?",
+      "command": "REBOOT"
+    }
+  ]
+}
+

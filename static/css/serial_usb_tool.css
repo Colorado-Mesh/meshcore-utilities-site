@@ -1,0 +1,136 @@
+.serial-tool-page .serial-tool-container {
+    max-width: 1100px;
+}
+
+.serial-status-panel,
+.serial-panel {
+    background: #202020;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 18px;
+    margin-top: 18px;
+}
+
+.serial-status-row,
+.serial-toolbar,
+.serial-grid {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.serial-status-row > div {
+    flex: 1 1 220px;
+}
+
+.serial-label,
+.serial-command-meta {
+    color: #9ca3af;
+    font-size: 13px;
+}
+
+.serial-mono,
+.serial-log {
+    font-family: 'Monaco', 'Courier New', monospace;
+}
+
+.serial-status-pill {
+    display: inline-flex;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-weight: 700;
+    margin-top: 6px;
+    background: #334155;
+    color: #e2e8f0;
+}
+
+.serial-status-connecting { background: #92400e; }
+.serial-status-connected { background: #166534; }
+.serial-status-idle { background: #334155; }
+
+.serial-banner-info { background: #1f2937; color: #dbeafe; border-color: #374151; }
+.serial-banner-error { background: #3f1d1d; color: #fecaca; border-color: #7f1d1d; }
+
+.serial-toolbar button,
+.serial-command-button,
+.secondary-button {
+    width: auto;
+}
+
+.secondary-button {
+    background: #334155 !important;
+    box-shadow: none !important;
+}
+
+.serial-grid > .serial-panel {
+    flex: 1 1 320px;
+    min-width: 300px;
+}
+
+.serial-command-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.serial-command-card {
+    padding: 14px;
+    border: 1px solid #374151;
+    border-radius: 8px;
+    background: #111827;
+}
+
+.serial-command-title {
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.serial-command-description {
+    color: #cbd5e1;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.serial-command-button {
+    margin-top: 10px;
+    background: #2563eb;
+}
+
+.serial-empty-state {
+    padding: 16px;
+    border: 1px dashed #4b5563;
+    border-radius: 8px;
+    color: #9ca3af;
+}
+
+.serial-log {
+    min-height: 320px;
+    max-height: 520px;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+    background: #0b1220;
+    border: 1px solid #243045;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.serial-log-line {
+    margin-bottom: 6px;
+}
+
+.serial-log-time {
+    color: #93c5fd;
+}
+
+.serial-log-info { color: #cbd5e1; }
+.serial-log-success { color: #86efac; }
+.serial-log-outgoing { color: #fbbf24; }
+.serial-log-incoming { color: #93c5fd; }
+.serial-log-error { color: #fca5a5; }
+
+.serial-notes-list {
+    padding-left: 20px;
+    color: #d1d5db;
+}
+
