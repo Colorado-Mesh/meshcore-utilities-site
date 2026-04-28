@@ -14,6 +14,10 @@ function _buildInfoCard(node) {
             <h2 class="hex-info-title">${node.name}</h2>
             <div class="hex-info-grid">
                 <div class="hex-info-item">
+                    <span class="hex-info-label">🏷️ Type</span>
+                    <span class="hex-info-value">${node.node_type}</span>
+                </div>
+                <div class="hex-info-item">
                     <span class="hex-info-label">🔑 Public Key</span>
                     <span class="hex-info-value">${node.public_key}</span>
                 </div>
@@ -70,7 +74,7 @@ function showNodeInfo(hexId, node) {
     modal.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-function showDuplicateInfo(hexId, nodes) {
+function showDuplicateInfo(hexId, nodes, isRepeaterCollision) {
     const modal = document.getElementById('hex-modal');
     const modalBody = document.getElementById('hex-modal-body');
 
@@ -79,13 +83,22 @@ function showDuplicateInfo(hexId, nodes) {
         entriesHtml += _buildInfoCard(node);
     });
 
+    const warningSection = isRepeaterCollision ? `
+        <div class="hex-info-header">
+            <span class="hex-id-badge hex-duplicate-badge">${hexId}</span>
+            <span class="hex-warning-badge">⚠️ REPEATER CONFLICT</span>
+        </div>
+        <p class="hex-duplicate-warning">Multiple repeaters are using the same ID. This must be resolved!</p>
+    ` : `
+        <div class="hex-info-header">
+            <span class="hex-id-badge hex-duplicate-badge">${hexId}</span>
+        </div>
+        <p class="hex-info-description">Multiple nodes share this ID (mix of node types).</p>
+    `;
+
     modalBody.innerHTML = `
         <div class="hex-info-card">
-            <div class="hex-info-header">
-                <span class="hex-id-badge hex-duplicate-badge">${hexId}</span>
-                <span class="hex-warning-badge">⚠️ DUPLICATE CONFLICT</span>
-            </div>
-            <p class="hex-duplicate-warning">Multiple nodes are using the same ID. This must be resolved!</p>
+            ${warningSection}
             <div class="hex-duplicates-container">
                 ${entriesHtml}
             </div>
@@ -122,6 +135,7 @@ function _searchInInfo(info, query) {
         info.public_key,
         info.contact_url,
         info.last_heard,
+        info.node_type,
     ];
     return searchableFields.some(field => field !== undefined && field !== null && String(field).toLowerCase().includes(query));
 }

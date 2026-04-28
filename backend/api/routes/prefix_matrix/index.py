@@ -2,7 +2,7 @@ import json
 
 from coloradomesh.internal.utils import epoch_to_datetime  # Probably shouldn't be accessing internal utils
 from coloradomesh.meshcore.models.general import Node
-from coloradomesh.meshcore.models.general import NodeStatus
+from coloradomesh.meshcore.models.general import NodeStatus, NodeType
 from coloradomesh.meshcore.services.public_keys import reserved_public_key_ids
 from flask import (
     Blueprint,
@@ -26,6 +26,16 @@ def _hex_chars() -> list[str]:
 
 def _build_node_info(node: Node) -> dict:
     rid = _get_4char_id(node)
+    node_type_name = node.node_type.name if node.node_type else "UNKNOWN"
+    # Map node type to display name
+    type_display = {
+        "REPEATER": "🔁 Repeater",
+        "COMPANION": "📱 Companion",
+        "ROOM_SERVER": "🏢 Room Server",
+        "SENSOR": "📊 Sensor",
+        "UNKNOWN": "❓ Unknown"
+    }.get(node_type_name, "❓ Unknown")
+
     return {
         "status": node.status.to_str(),
         "status_value": node.status.to_str().upper(),
@@ -37,6 +47,7 @@ def _build_node_info(node: Node) -> dict:
         "public_key": node.public_key,
         "name": node.name,
         "contact_url": node.contact_url,
+        "node_type": type_display,
     }
 
 
@@ -63,6 +74,7 @@ def _build_search_text(nodes: list[Node]) -> str:
             info.get("public_key"),
             info.get("contact_url"),
             info.get("last_heard"),
+            info.get("node_type"),
         ])
     return " ".join(str(value) for value in searchable_values if value).lower()
 
@@ -75,6 +87,17 @@ def _get_4char_id(node: Node) -> str:
 def _is_reserved_id(cell_id_4: str) -> bool:
     cell_id_4 = cell_id_4.upper()
     return cell_id_4 in reserved_ids or cell_id_4[:2] in reserved_ids
+
+
+def _is_repeater(node: Node) -> bool:
+    """Check if a node is a repeater or room server."""
+    return node.node_type in [NodeType.REPEATER, NodeType.ROOM_SERVER]
+
+
+def _has_repeater_collision(nodes: list[Node]) -> bool:
+    """Check if there are multiple repeaters with the same 4-char ID."""
+    repeaters = [node for node in nodes if _is_repeater(node)]
+    return len(repeaters) > 1
 
 
 def _build_sub_cell(cell_id_4: str, nodes: list[Node]) -> dict:
@@ -93,9 +116,11 @@ def _build_sub_cell(cell_id_4: str, nodes: list[Node]) -> dict:
         info_json = _build_info_json(nodes)
         on_click = f'showNodeInfo("{cell_id_4}", {info_json})'
     else:
-        css_class = "hex-duplicate"
+        # Only treat as duplicate if there are multiple repeaters
+        has_repeater_collision = _has_repeater_collision(nodes)
+        css_class = "hex-duplicate" if has_repeater_collision else "hex-used"
         info_json = _build_info_json(nodes)
-        on_click = f'showDuplicateInfo("{cell_id_4}", {info_json})'
+        on_click = f'showDuplicateInfo("{cell_id_4}", {info_json}, {str(has_repeater_collision).lower()})'
 
     if nodes and not any(node.status in [NodeStatus.ACTIVE, NodeStatus.NEW] for node in nodes):
         css_class += " hex-inactive"
@@ -133,12 +158,17 @@ def _aggregate_css(prefix_2: str, nodes: list[Node]) -> str:
             css += " hex-reserved"
         return css
 
-    id_counts = {}
+    # Check for repeater collisions at this prefix level
+    repeaters_by_4char = {}
     for node in nodes:
-        rid = _get_4char_id(node)
-        id_counts[rid] = id_counts.get(rid, 0) + 1
+        if _is_repeater(node):
+            rid = _get_4char_id(node)
+            if rid not in repeaters_by_4char:
+                repeaters_by_4char[rid] = 0
+            repeaters_by_4char[rid] += 1
 
-    css = "hex-duplicate" if any(count > 1 for count in id_counts.values()) else "hex-used"
+    has_repeater_collision = any(count > 1 for count in repeaters_by_4char.values())
+    css = "hex-duplicate" if has_repeater_collision else "hex-used"
 
     has_active = any(node.status in [NodeStatus.ACTIVE, NodeStatus.NEW] for node in nodes)
     if not has_active:
