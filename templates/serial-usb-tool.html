@@ -40,15 +40,23 @@
     </div>
 
     <div class="serial-toolbar">
-        <button type="button" id="serial-connect-btn">Connect USB Serial</button>
-        <button type="button" id="serial-disconnect-btn" class="secondary-button" disabled>Disconnect</button>
-        <button type="button" id="serial-clear-log-btn" class="secondary-button">Clear Log</button>
+        <div class="serial-toolbar-row">
+            <button type="button" id="serial-connect-btn">Connect USB Serial</button>
+            <button type="button" id="serial-disconnect-btn" class="secondary-button" disabled>Disconnect</button>
+            <button type="button" id="serial-clear-log-btn" class="secondary-button">Clear Log</button>
+        </div>
+        <div class="serial-toolbar-row serial-toolbar-row-upload">
+            <input type="file" id="serial-settings-file" class="serial-settings-file" accept="application/json,.json">
+            <button type="button" id="serial-load-settings-btn" class="secondary-button">Load Settings</button>
+            <button type="button" id="serial-reset-profile-btn" class="secondary-button">Use Default Profile</button>
+        </div>
     </div>
+    <p class="help-text serial-upload-help">Upload a repeater settings file to generate command steps from your configuration.</p>
 
     <div class="serial-grid">
         <section class="serial-panel">
             <h2>Command Buttons</h2>
-            <p class="help-text">Each button below is generated from <code>static/data/serial_commands.json</code>.</p>
+            <p class="help-text">Buttons are generated from the active profile (default config or uploaded settings file).</p>
             <div id="serial-command-list" class="serial-command-list"></div>
         </section>
 
@@ -74,7 +82,7 @@
 </footer>
 
 <script>
-    window.SERIAL_TOOL_CONFIG_URL = {{ url_for('static', filename='data/serial_commands.json') | tojson }};
+    window.SERIAL_TOOL_CONFIG_URL = {{ url_for('static', filename='data/default_serial_commands.json') | tojson }};
 </script>
 </body>
 </html>

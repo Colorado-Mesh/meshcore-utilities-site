@@ -19,6 +19,16 @@
     flex-wrap: wrap;
 }
 
+.serial-toolbar-row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.serial-toolbar-row-upload {
+    flex-basis: 100%;
+}
+
 .serial-status-row > div {
     flex: 1 1 220px;
 }
@@ -60,6 +70,20 @@
 .secondary-button {
     background: #334155 !important;
     box-shadow: none !important;
+}
+
+.serial-profile-file {
+    width: auto;
+    max-width: 280px;
+    padding: 7px;
+    border: 1px solid #374151;
+    border-radius: 8px;
+    background: #0b1220;
+    color: #d1d5db;
+}
+
+.serial-upload-help {
+    margin-top: 10px;
 }
 
 .serial-grid > .serial-panel {

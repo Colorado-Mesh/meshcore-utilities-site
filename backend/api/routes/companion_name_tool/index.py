@@ -71,12 +71,12 @@ def generate_companion_details():
         public_key_id=suggested_public_key_id
     )
 
-    import_json: dict = recommended_settings
-    import_json['name'] = name
+    settings_json: dict = recommended_settings
+    settings_json['name'] = name
 
     return {
         "name": name,
         "public_key_id": suggested_public_key_id,
-        "import_json": import_json,
-        "import_json_file_name": f"coloradomesh_meshcore_companion_config_{name}",
+        "settings_json": settings_json,
+        "settings_json_file_name": f"coloradomesh_meshcore_companion_config_{name}",
     }

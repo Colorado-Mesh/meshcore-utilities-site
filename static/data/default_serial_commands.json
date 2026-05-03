@@ -1,0 +1,579 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Colorado-Mesh/meshcore-utilities-site/main/serial_commands.schema.json",
+  "name": "Colorado Mesh Default MeshCore USB Command Profile",
+  "description": "Default canned serial commands for MeshCore repeater firmware over raw UART. This profile includes commands that are valid in serial-direct mode; client-mode-only mesh protocol commands and host-file-transfer helpers are intentionally excluded.",
+  "serial": {
+    "baudRate": 115200,
+    "dataBits": 8,
+    "stopBits": 1,
+    "parity": "none",
+    "flowControl": "none",
+    "defaultLineEnding": "CRLF"
+  },
+  "actions": [
+    {
+      "id": "information",
+      "label": "Information",
+      "description": "Read firmware version, board name, and clock.",
+      "steps": [
+        {
+          "type": "send",
+          "command": "ver",
+          "order": 1
+        },
+        {
+          "type": "wait",
+          "delayMs": 150,
+          "order": 2
+        },
+        {
+          "type": "send",
+          "command": "board",
+          "order": 3
+        },
+        {
+          "type": "wait",
+          "delayMs": 150,
+          "order": 4
+        },
+        {
+          "type": "send",
+          "command": "clock",
+          "order": 5
+        }
+      ],
+      "confirm": false,
+      "confirmMessage": ""
+    },
+    {
+      "id": "sync-clock",
+      "label": "Sync Clock",
+      "description": "Sync the device clock to the current system time.",
+      "steps": [
+        {
+          "type": "send",
+          "command": "clock sync",
+          "order": 1
+        }
+      ],
+      "confirm": true,
+      "confirmMessage": "Sync the device clock to the current system time?"
+    },
+    {
+      "id": "statistics",
+      "label": "Statistics",
+      "description": "Read various statistics counters.",
+      "steps": [
+        {
+          "type": "send",
+          "command": "stats-core",
+          "order": 1
+        },
+        {
+          "type": "wait",
+          "delayMs": 150,
+          "order": 2
+        },
+        {
+          "type": "send",
+          "command": "stats-radio",
+          "order": 3
+        },
+        {
+          "type": "wait",
+          "delayMs": 150,
+          "order": 4
+        },
+        {
+          "type": "send",
+          "command": "stats-packets",
+          "order": 5
+        }
+      ],
+      "confirm": false,
+      "confirmMessage": ""
+    },
+    {
+      "id": "clear-stats",
+      "label": "Clear Statistics",
+      "description": "Reset all statistics counters.",
+      "steps": [
+        {
+          "type": "send",
+          "command": "clear stats",
+          "order": 1
+        }
+      ],
+      "confirm": true,
+      "confirmMessage": "Reset all statistics counters?"
+    },
+    {
+      "id": "start-packet-logging",
+      "label": "Start Packet Logging",
+      "description": "Start logging packets",
+      "steps": [
+        {
+          "type": "send",
+          "command": "log start",
+          "order": 1
+        }
+      ],
+      "confirm": true,
+      "confirmMessage": "Start logging packets?"
+    },
+    {
+      "id": "stop-packet-logging",
+      "label": "Stop Packet Logging",
+      "description": "Stop logging packets",
+      "steps": [
+        {
+          "type": "send",
+          "command": "log stop",
+          "order": 1
+        }
+      ],
+      "confirm": true,
+      "confirmMessage": "Stop logging packets?"
+    },
+    {
+      "id": "summary",
+      "label": "Summary",
+      "description": "Run a series of commands to get a summary of repeater.",
+      "steps": [
+        {
+          "type": "send",
+          "command": "ver",
+          "order": 1
+        },
+        {
+          "type": "wait",
+          "delayMs": 150,
+          "order": 2
+        },
+        {
+          "type": "send",
+          "command": "board",
+          "order": 3
+        },
+        {
+          "type": "wait",
+          "delayMs": 150,
+          "order": 4
+        },
+        {
+          "type": "send",
+          "command": "clock",
+          "order": 5
+        },
+        {
+          "type": "wait",
+          "delayMs": 150,
+          "order": 6
+        },
+        {
+          "type": "send",
+          "command": "get name",
+          "order": 7
+        },
+        {
+          "type": "wait",
+          "delayMs": 150,
+          "order": 8
+        },
+        {
+          "type": "send",
+          "command": "get role",
+          "order": 9
+        },
+        {
+          "type": "wait",
+          "delayMs": 150,
+          "order": 10
+        },
+        {
+          "type": "send",
+          "command": "get radio",
+          "order": 11
+        },
+        {
+          "type": "wait",
+          "delayMs": 150,
+          "order": 12
+        },
+        {
+          "type": "send",
+          "command": "get freq",
+          "order": 13
+        },
+        {
+          "type": "wait",
+          "delayMs": 150,
+          "order": 14
+        },
+        {
+          "type": "send",
+          "command": "get tx",
+          "order": 15
+        },
+        {
+          "type": "wait",
+          "delayMs": 150,
+          "order": 16
+        },
+        {
+          "type": "send",
+          "command": "get af",
+          "order": 17
+        },
+        {
+          "type": "wait",
+          "delayMs": 150,
+          "order": 18
+        },
+        {
+          "type": "send",
+          "command": "get repeat",
+          "order": 19
+        },
+        {
+          "type": "wait",
+          "delayMs": 150,
+          "order": 20
+        },
+        {
+          "type": "send",
+          "command": "get public.key",
+          "order": 21
+        },
+        {
+          "type": "wait",
+          "delayMs": 150,
+          "order": 22
+        },
+        {
+          "type": "send",
+          "command": "get lat",
+          "order": 23
+        },
+        {
+          "type": "wait",
+          "delayMs": 150,
+          "order": 24
+        },
+        {
+          "type": "send",
+          "command": "get lon",
+          "order": 25
+        },
+        {
+          "type": "wait",
+          "delayMs": 150,
+          "order": 26
+        },
+        {
+          "type": "send",
+          "command": "get advert.interval",
+          "order": 27
+        },
+        {
+          "type": "wait",
+          "delayMs": 150,
+          "order": 28
+        },
+        {
+          "type": "send",
+          "command": "get flood.advert.interval",
+          "order": 29
+        },
+        {
+          "type": "wait",
+          "delayMs": 150,
+          "order": 30
+        },
+        {
+          "type": "send",
+          "command": "get flood.max",
+          "order": 31
+        },
+        {
+          "type": "wait",
+          "delayMs": 150,
+          "order": 32
+        },
+        {
+          "type": "send",
+          "command": "get guest.password",
+          "order": 33
+        },
+        {
+          "type": "wait",
+          "delayMs": 150,
+          "order": 34
+        },
+        {
+          "type": "send",
+          "command": "get allow.read.only",
+          "order": 35
+        },
+        {
+          "type": "wait",
+          "delayMs": 150,
+          "order": 36
+        },
+        {
+          "type": "send",
+          "command": "get owner.info",
+          "order": 37
+        },
+        {
+          "type": "wait",
+          "delayMs": 150,
+          "order": 38
+        },
+        {
+          "type": "send",
+          "command": "get acl",
+          "order": 39
+        },
+        {
+          "type": "wait",
+          "delayMs": 150,
+          "order": 40
+        },
+        {
+          "type": "send",
+          "command": "get rxdelay",
+          "order": 41
+        },
+        {
+          "type": "wait",
+          "delayMs": 150,
+          "order": 42
+        },
+        {
+          "type": "send",
+          "command": "get txdelay",
+          "order": 43
+        },
+        {
+          "type": "wait",
+          "delayMs": 150,
+          "order": 44
+        },
+        {
+          "type": "send",
+          "command": "get direct.txdelay",
+          "order": 45
+        }
+      ],
+      "confirm": false,
+      "confirmMessage": ""
+    },
+    {
+      "id": "reboot",
+      "label": "Reboot",
+      "description": "Reboot the device.",
+      "steps": [
+        {
+          "type": "send",
+          "command": "reboot",
+          "order": 1
+        }
+      ],
+      "confirm": true,
+      "confirmMessage": "Reboot the device?"
+    },
+    {
+      "id": "factory-reset",
+      "label": "Factory Reset",
+      "description": "Reset all settings to factory defaults.",
+      "steps": [
+        {
+          "type": "send",
+          "command": "erase",
+          "order": 1
+        }
+      ],
+      "confirm": true,
+      "confirmMessage": "Reset all settings to factory defaults?"
+    },
+    {
+      "id": "neighbors",
+      "label": "Neighbors",
+      "description": "List neighbors and demonstrate neighbor-related commands.",
+      "steps": [
+        {
+          "type": "send",
+          "command": "discover.neighbors",
+          "order": 1
+        },
+        {
+          "type": "wait",
+          "delayMs": 500,
+          "order": 2
+        },
+        {
+          "type": "send",
+          "command": "neighbor",
+          "order": 3
+        }
+      ],
+      "confirm": false,
+      "confirmMessage": "Discover and list neighbor information?"
+    },
+    {
+      "id": "bridge-config",
+      "label": "Bridge Configuration",
+      "description": "Inspect and write bridge parameters.",
+      "steps": [
+        {
+          "type": "send",
+          "command": "get bridge.enabled",
+          "order": 1
+        },
+        {
+          "type": "wait",
+          "delayMs": 100,
+          "order": 2
+        },
+        {
+          "type": "send",
+          "command": "get bridge.delay",
+          "order": 3
+        },
+        {
+          "type": "wait",
+          "delayMs": 100,
+          "order": 4
+        },
+        {
+          "type": "send",
+          "command": "get bridge.source",
+          "order": 5
+        },
+        {
+          "type": "wait",
+          "delayMs": 100,
+          "order": 6
+        },
+        {
+          "type": "send",
+          "command": "get bridge.baud",
+          "order": 7
+        },
+        {
+          "type": "wait",
+          "delayMs": 100,
+          "order": 8
+        },
+        {
+          "type": "send",
+          "command": "get bridge.secret",
+          "order": 9
+        }
+      ],
+      "confirm": false,
+      "confirmMessage": ""
+    },
+    {
+      "id": "regions",
+      "label": "Region Management",
+      "description": "Inspect regions and save region configuration.",
+      "steps": [
+        {
+          "type": "send",
+          "command": "region",
+          "order": 1
+        },
+        {
+          "type": "wait",
+          "delayMs": 150,
+          "order": 2
+        },
+        {
+          "type": "send",
+          "command": "region home",
+          "order": 3
+        },
+        {
+          "type": "wait",
+          "delayMs": 150,
+          "order": 4
+        },
+        {
+          "type": "send",
+          "command": "region get",
+          "order": 5
+        }
+      ],
+      "confirm": false,
+      "confirmMessage": ""
+    },
+    {
+      "id": "enable-gps",
+      "label": "Enable GPS",
+      "description": "Enable GPS and sync time.",
+      "steps": [
+        {
+          "type": "send",
+          "command": "gps on",
+          "order": 1
+        },
+        {
+          "type": "wait",
+          "delayMs": 100,
+          "order": 2
+        },
+        {
+          "type": "send",
+          "command": "gps sync",
+          "order": 3
+        }
+      ],
+      "confirm": true,
+      "confirmMessage": "Enable GPS and sync?"
+    },
+    {
+      "id": "disable-gps",
+      "label": "Disable GPS",
+      "description": "Disable GPS.",
+      "steps": [
+        {
+          "type": "send",
+          "command": "gps off",
+          "order": 1
+        }
+      ],
+      "confirm": true,
+      "confirmMessage": "Disable GPS?"
+    },
+    {
+      "id": "enable-power-saving",
+      "label": "Enable Power Saving",
+      "description": "Enable power saving mode.",
+      "steps": [
+        {
+          "type": "send",
+          "command": "powersaving on",
+          "order": 1
+        }
+      ],
+      "confirm": true,
+      "confirmMessage": "Enable power saving mode?"
+    },
+    {
+      "id": "disable-power-saving",
+      "label": "Disable Power Saving",
+      "description": "Disable power saving mode.",
+      "steps": [
+        {
+          "type": "send",
+          "command": "powersaving off",
+          "order": 1
+        }
+      ],
+      "confirm": true,
+      "confirmMessage": "Disable power saving mode?"
+    }
+  ]
+}

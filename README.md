@@ -49,5 +49,5 @@ python app.py
 - Repeater configuration generator
 - Companion configuration generator
 - Prefix matrix browser
-- Serial USB command console driven by `static/data/serial_commands.json`
+- Serial USB command console
 

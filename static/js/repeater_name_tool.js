@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
         resultsDownloadConfigBtn.addEventListener('click', () => {
-            downloadJSON(data.import_json, data.import_json_file_name, resultsPublicKey.value, resultsPrivateKey.value);
+            downloadJSON(data.settings_json, data.settings_json_file_name, resultsPublicKey.value, resultsPrivateKey.value);
         });
 
         resultsSuccess.style.display = 'block';
@@ -292,7 +292,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function downloadJSON(importJson, fileName, publicKey, privateKey) {
-        // Create a copy of import_json to avoid modifying the original
+        // Create a copy of settings_json to avoid modifying the original
         const jsonData = JSON.parse(JSON.stringify(importJson));
 
         // Add private key if provided

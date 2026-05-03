@@ -1,0 +1,256 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://coloradomesh.org/schemas/serial_commands.schema.json",
+  "title": "MeshCore Serial Command Profile",
+  "description": "Schema for serial configurator profiles consumed by the WebSerial tool.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "description",
+    "serial",
+    "actions"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string"
+    },
+    "serial": {
+      "$ref": "#/definitions/serialConfig"
+    },
+    "actions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/action"
+      }
+    }
+  },
+  "definitions": {
+    "serialFilter": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "usbVendorId": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 65535
+        },
+        "usbProductId": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 65535
+        }
+      },
+      "minProperties": 1
+    },
+    "serialConfig": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "baudRate",
+        "dataBits",
+        "stopBits",
+        "parity",
+        "flowControl",
+        "defaultLineEnding"
+      ],
+      "properties": {
+        "baudRate": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "dataBits": {
+          "type": "integer",
+          "enum": [
+            7,
+            8
+          ]
+        },
+        "stopBits": {
+          "type": "integer",
+          "enum": [
+            1,
+            2
+          ]
+        },
+        "parity": {
+          "type": "string",
+          "enum": [
+            "none",
+            "even",
+            "odd"
+          ]
+        },
+        "flowControl": {
+          "type": "string",
+          "enum": [
+            "none",
+            "hardware"
+          ]
+        },
+        "defaultLineEnding": {
+          "type": "string",
+          "enum": [
+            "CRLF",
+            "CR",
+            "LF",
+            "NONE"
+          ]
+        },
+        "filters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/serialFilter"
+          }
+        }
+      }
+    },
+    "sendStep": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "order",
+        "command"
+      ],
+      "properties": {
+        "order": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "send",
+            "command"
+          ]
+        },
+        "command": {
+          "type": "string",
+          "minLength": 1
+        },
+        "lineEnding": {
+          "type": "string",
+          "enum": [
+            "CRLF",
+            "CR",
+            "LF",
+            "NONE"
+          ]
+        },
+        "delayMs": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "waitStep": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "order": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "type": {
+          "type": "string",
+          "const": "wait"
+        },
+        "delayMs": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "order",
+        "type"
+      ]
+    },
+    "step": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/sendStep"
+        },
+        {
+          "$ref": "#/definitions/waitStep"
+        }
+      ]
+    },
+    "action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "label",
+        "description"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "buttonLabel": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string"
+        },
+        "confirm": {
+          "type": "boolean"
+        },
+        "requiresConfirmation": {
+          "type": "boolean"
+        },
+        "confirmMessage": {
+          "type": "string"
+        },
+        "lineEnding": {
+          "type": "string",
+          "enum": [
+            "CRLF",
+            "CR",
+            "LF",
+            "NONE"
+          ]
+        },
+        "delayMs": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "command": {
+          "type": "string",
+          "minLength": 1
+        },
+        "steps": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/step"
+          }
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "command"
+          ]
+        },
+        {
+          "required": [
+            "steps"
+          ]
+        }
+      ]
+    }
+  }
+}
+
