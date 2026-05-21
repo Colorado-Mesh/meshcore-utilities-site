@@ -43,7 +43,7 @@
                         <label for="city-select">Select Nearest City: <span class="required">*</span></label>
                         <select id="city-select" name="city">
                             {% for city in cities %}
-                            <option value="{{ city.code }}">{{ city.name }}</option>
+                            <option value="{{ city.name }}">{{ city.name }}</option>
                             {% endfor %}
                         </select>
                         <span class="help-text">

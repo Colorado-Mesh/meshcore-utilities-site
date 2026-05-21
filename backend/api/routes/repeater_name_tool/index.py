@@ -1,7 +1,6 @@
 from typing import Optional
 
-from colorado import Mountains
-from coloradomesh.colorado import Airports, Municipalities, UnincorporatedAreas
+from coloradomesh.colorado import Airports, Municipalities, UnincorporatedAreas, Mountains
 from coloradomesh.meshcore.models.general import RepeaterType, RepeaterSettings, RepeaterRegionSettings
 from flask import (
     Blueprint,
@@ -27,14 +26,14 @@ city_five_char_limit = [
 ]
 # We'll call them "cities" in the UI for simplicity, but they can be municipalities or unincorporated areas
 cities = [municipality for municipality in Municipalities] + [area for area in UnincorporatedAreas]
-for city in sorted(cities, key=lambda x: x.name):
+for city in sorted(cities, key=lambda x: x.canonical_name):
     city_five_char_limit.append({
-        "name": city.name,
-        "code": city.abbreviations.five_letter,
+        "name": city.canonical_name,
+        # "code": city.abbreviations.five_letter,
         "region": city.nearest_airport.iata_code
     })
 city_abbreviation_region_code_map = {
-    city.abbreviations.five_letter: city.nearest_airport.iata_code for city in cities
+    city.canonical_name: city.nearest_airport.iata_code for city in cities
 }
 
 # Cache all mountain options alphabetically by name, with blank option at the top
@@ -42,9 +41,9 @@ mountain_seven_char_limit = [
     {"name": "---", "code": "", "region": ""}
 ]
 mountains = Mountains
-for mountain in sorted(mountains, key=lambda x: x.name):
+for mountain in sorted(mountains, key=lambda x: x.canonical_name):
     mountain_seven_char_limit.append({
-        "name": mountain.name,
+        "name": mountain.canonical_name,
         "code": mountain.abbreviations.seven_letter,
         "region": mountain.nearest_airport.iata_code
     })

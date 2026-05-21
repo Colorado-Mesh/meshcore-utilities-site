@@ -1,15 +1,26 @@
 from typing import Optional, Any
 
+from coloradomesh.colorado import Municipalities, UnincorporatedAreas
 from coloradomesh.emojis import EmojiTools
 from coloradomesh.meshcore.models.general import RepeaterType, CompanionType
 from pydantic import BaseModel, model_validator, Field, field_validator, ValidationInfo
+
+
+def get_city_from_canonical_name(name: str) -> Optional[Municipalities | UnincorporatedAreas]:
+    try:
+        return Municipalities.from_canonical_name(name=name)
+    except:
+        try:
+            return UnincorporatedAreas.from_canonical_name(name=name)
+        except:
+            return None
 
 
 class UserRepeaterInformation(BaseModel):
     mountain: str = Field(alias="mountain",
                           default=None)  # <=5-char mountain code, optional since users may be using city+landmark combo instead
     city: Optional[str] = Field(alias="city",
-                                default=None)  # <=5-char city code, optional since users may be using mountain instead
+                                default=None)  # City canonical name, optional since users may be using mountain instead
     landmark: str = Field(alias="landmark",
                           default=None)  # <=5-char landmark code, optional since users may be using mountain instead
     node_type: RepeaterType = Field(alias="node-type")
@@ -21,8 +32,6 @@ class UserRepeaterInformation(BaseModel):
         if any([self.city, self.landmark]):
             if not all([self.city, self.landmark]):
                 raise ValueError("Both city and landmark must be provided if one of them is provided")
-            if len(self.city) > 5:  # This is restricted to a dropdown on the UI, so this shouldn't happen
-                raise ValueError("City code must be up to 5 characters long")
             if len(self.landmark) > 5:
                 raise ValueError("Landmark code must be up to 5 characters long")
         # If mountain provided, need <=7 chars
@@ -32,6 +41,14 @@ class UserRepeaterInformation(BaseModel):
 
         return self
 
+    @property
+    def city_abbreviation(self) -> Optional[str]:
+        city: Optional[Municipalities | UnincorporatedAreas] = get_city_from_canonical_name(self.city) if self.city else None
+        if not city:
+            return None
+
+        return city.abbreviations.five_letter.upper()
+
     def generate_name(self, region_code: str, public_key_id: str) -> str:
         from coloradomesh.meshcore.models.general import RepeaterName
 
@@ -39,7 +56,7 @@ class UserRepeaterInformation(BaseModel):
             **dict(
                 repeater_type=self.node_type,
                 region=region_code,
-                city=self.city,
+                city=self.city_abbreviation,
                 landmark=self.landmark if self.city else self.mountain,
                 # Mountain will be the "landmark" if not using city
                 public_key_id=public_key_id
