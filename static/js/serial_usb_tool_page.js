@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
             order: 24, type: 'wait', delayMs: 150,
         });
         commands.push({
-            order: 25, type: 'send', command: `set path.hash.size ${pathHashMode(settings.prefix_size)}`,
+            order: 25, type: 'send', command: `set path.hash.mode ${pathHashMode(settings.prefix_size)}`,
         });
         commands.push({
             order: 26, type: 'wait', delayMs: 150,
