@@ -3,7 +3,7 @@
     "frequency": 910525,
     "bandwidth": 62500,
     "spreading_factor": 7,
-    "coding_rate": 8,
+    "coding_rate": 5,
     "tx_power": 22
   }
 }
