@@ -1,0 +1,1284 @@
+[
+    {
+        "abbreviations": {
+            "three_letter": "ADM",
+            "five_letter": "ADAMS",
+            "seven_letter": "ADAMS",
+            "fourteen_letter": "ADAMS"
+        },
+        "name": "Adams",
+        "zone": 0,
+        "api_code": "001",
+        "geojson_id": 246,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "TE-UF",
+                "GA-GG"
+            ],
+            "three_letter_prefix_ranges": [
+                "SAA-TZZ"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "ALM",
+            "five_letter": "ALAMS",
+            "seven_letter": "ALAMOSA",
+            "fourteen_letter": "ALAMOSA"
+        },
+        "name": "Alamosa",
+        "zone": 2,
+        "api_code": "003",
+        "geojson_id": 247,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "XE-XG"
+            ],
+            "three_letter_prefix_ranges": [
+                "EAA-EBD"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "APH",
+            "five_letter": "ARAPH",
+            "seven_letter": "ARAPAHO",
+            "fourteen_letter": "ARAPAHOE"
+        },
+        "name": "Arapahoe",
+        "zone": 0,
+        "api_code": "005",
+        "geojson_id": 248,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "PH-RP",
+                "FA-FG"
+            ],
+            "three_letter_prefix_ranges": [
+                "PAA-RZZ"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "ARL",
+            "five_letter": "ARCHL",
+            "seven_letter": "ARCHULT",
+            "fourteen_letter": "ARCHULETA"
+        },
+        "name": "Archuleta",
+        "zone": 3,
+        "api_code": "007",
+        "geojson_id": 249,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "YU"
+            ],
+            "three_letter_prefix_ranges": [
+                "FAA-FAL"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "BAC",
+            "five_letter": "BACA",
+            "seven_letter": "BACA",
+            "fourteen_letter": "BACA"
+        },
+        "name": "Baca",
+        "zone": 3,
+        "api_code": "009",
+        "geojson_id": 250,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "WG"
+            ],
+            "three_letter_prefix_ranges": [
+                "EBE-EBW"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "BNT",
+            "five_letter": "BENT",
+            "seven_letter": "BENT",
+            "fourteen_letter": "BENT"
+        },
+        "name": "Bent",
+        "zone": 3,
+        "api_code": "011",
+        "geojson_id": 251,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "XC"
+            ],
+            "three_letter_prefix_ranges": [
+                "EBX-ECL"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "BLD",
+            "five_letter": "BOULD",
+            "seven_letter": "BOULDER",
+            "fourteen_letter": "BOULDER"
+        },
+        "name": "Boulder",
+        "zone": 0,
+        "api_code": "013",
+        "geojson_id": 252,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "ML-NF",
+                "FH-FP"
+            ],
+            "three_letter_prefix_ranges": [
+                "MAA-NZZ"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "BRM",
+            "five_letter": "BROOM",
+            "seven_letter": "BROOMFL",
+            "fourteen_letter": "BROOMFIELD"
+        },
+        "name": "Broomfield",
+        "zone": 1,
+        "api_code": "014",
+        "geojson_id": 253,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [],
+            "three_letter_prefix_ranges": []
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "CHF",
+            "five_letter": "CHAFF",
+            "seven_letter": "CHAFFEE",
+            "fourteen_letter": "CHAFFEE"
+        },
+        "name": "Chaffee",
+        "zone": 2,
+        "api_code": "015",
+        "geojson_id": 254,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "XH-XK"
+            ],
+            "three_letter_prefix_ranges": [
+                "FAM-FCC"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "CHY",
+            "five_letter": "CHYEN",
+            "seven_letter": "CHYENNE",
+            "fourteen_letter": "CHEYENNE"
+        },
+        "name": "Cheyenne",
+        "zone": 3,
+        "api_code": "017",
+        "geojson_id": 255,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "YR"
+            ],
+            "three_letter_prefix_ranges": [
+                "ECM-ECT"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "CLC",
+            "five_letter": "CLEAR",
+            "seven_letter": "CLEARCK",
+            "fourteen_letter": "CLEARCREEK"
+        },
+        "name": "Clear Creek",
+        "zone": 2,
+        "api_code": "019",
+        "geojson_id": 256,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "YY-YZ"
+            ],
+            "three_letter_prefix_ranges": [
+                "ECU-EDU"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "CNJ",
+            "five_letter": "CONJO",
+            "seven_letter": "CONEJOS",
+            "fourteen_letter": "CONEJOS"
+        },
+        "name": "Conejos",
+        "zone": 3,
+        "api_code": "021",
+        "geojson_id": 257,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "WS"
+            ],
+            "three_letter_prefix_ranges": [
+                "EDV-EEK"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "CTL",
+            "five_letter": "CSTIL",
+            "seven_letter": "COSTILL",
+            "fourteen_letter": "COSTILLA"
+        },
+        "name": "Costilla",
+        "zone": 3,
+        "api_code": "023",
+        "geojson_id": 258,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "YA"
+            ],
+            "three_letter_prefix_ranges": [
+                "EEL-EES"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "CWL",
+            "five_letter": "CROWL",
+            "seven_letter": "CROWLEY",
+            "fourteen_letter": "CROWLEY"
+        },
+        "name": "Crowley",
+        "zone": 3,
+        "api_code": "025",
+        "geojson_id": 259,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "XW-XX"
+            ],
+            "three_letter_prefix_ranges": [
+                "EET-EFA"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "CST",
+            "five_letter": "CUSTR",
+            "seven_letter": "CUSTER",
+            "fourteen_letter": "CUSTER"
+        },
+        "name": "Custer",
+        "zone": 3,
+        "api_code": "027",
+        "geojson_id": 260,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "ZA"
+            ],
+            "three_letter_prefix_ranges": [
+                "EFB-EFG"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "DLT",
+            "five_letter": "DELTA",
+            "seven_letter": "DELTA",
+            "fourteen_letter": "DELTA"
+        },
+        "name": "Delta",
+        "zone": 2,
+        "api_code": "029",
+        "geojson_id": 261,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "VL-VN"
+            ],
+            "three_letter_prefix_ranges": []
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "DEN",
+            "five_letter": "DENVR",
+            "seven_letter": "DENVER",
+            "fourteen_letter": "DENVER"
+        },
+        "name": "Denver",
+        "zone": 0,
+        "api_code": "031",
+        "geojson_id": 262,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "AA-CV"
+            ],
+            "three_letter_prefix_ranges": [
+                "AAA-DZZ"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "DLR",
+            "five_letter": "DOLOR",
+            "seven_letter": "DOLORES",
+            "fourteen_letter": "DOLORES"
+        },
+        "name": "Dolores",
+        "zone": 3,
+        "api_code": "033",
+        "geojson_id": 263,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "ZH"
+            ],
+            "three_letter_prefix_ranges": [
+                "EHR-EHV"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "DGL",
+            "five_letter": "DOUGL",
+            "seven_letter": "DOUGLAS",
+            "fourteen_letter": "DOUGLAS"
+        },
+        "name": "Douglas",
+        "zone": 1,
+        "api_code": "035",
+        "geojson_id": 264,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "YS-YT"
+            ],
+            "three_letter_prefix_ranges": [
+                "EHW-EMA"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "EAG",
+            "five_letter": "EAGLE",
+            "seven_letter": "EAGLE",
+            "fourteen_letter": "EAGLE"
+        },
+        "name": "Eagle",
+        "zone": 2,
+        "api_code": "037",
+        "geojson_id": 265,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "YM-YN"
+            ],
+            "three_letter_prefix_ranges": [
+                "EMB-EPA"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "ELB",
+            "five_letter": "ELBRT",
+            "seven_letter": "ELBERT",
+            "fourteen_letter": "ELBERT"
+        },
+        "name": "Elbert",
+        "zone": 3,
+        "api_code": "039",
+        "geojson_id": 266,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "XS-XT"
+            ],
+            "three_letter_prefix_ranges": [
+                "EPB-EPU"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "ELP",
+            "five_letter": "ELPAS",
+            "seven_letter": "ELPASO",
+            "fourteen_letter": "ELPASO"
+        },
+        "name": "El Paso",
+        "zone": 0,
+        "api_code": "041",
+        "geojson_id": 267,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "JX-LL",
+                "FR-FT",
+                "FV"
+            ],
+            "three_letter_prefix_ranges": [
+                "KAA-LZZ"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "FMT",
+            "five_letter": "FREMT",
+            "seven_letter": "FREMONT",
+            "fourteen_letter": "FREMONT"
+        },
+        "name": "Fremont",
+        "zone": 2,
+        "api_code": "043",
+        "geojson_id": 268,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "UP-UT"
+            ],
+            "three_letter_prefix_ranges": [
+                "EPV-ETV"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "GFL",
+            "five_letter": "GARFL",
+            "seven_letter": "GARFLD",
+            "fourteen_letter": "GARFIELD"
+        },
+        "name": "Garfield",
+        "zone": 2,
+        "api_code": "045",
+        "geojson_id": 269,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "WM-WR"
+            ],
+            "three_letter_prefix_ranges": [
+                "ETM-ETW"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "GLP",
+            "five_letter": "GILPN",
+            "seven_letter": "GILPIN",
+            "fourteen_letter": "GILPIN"
+        },
+        "name": "Gilpin",
+        "zone": 2,
+        "api_code": "047",
+        "geojson_id": 270,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "ZK"
+            ],
+            "three_letter_prefix_ranges": [
+                "EWN-EWV"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "GRD",
+            "five_letter": "GRAND",
+            "seven_letter": "GRAND",
+            "fourteen_letter": "GRAND"
+        },
+        "name": "Grand",
+        "zone": 3,
+        "api_code": "049",
+        "geojson_id": 271,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "ZB-ZC"
+            ],
+            "three_letter_prefix_ranges": [
+                "EWZ-EYB"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "GUN",
+            "five_letter": "GUNN",
+            "seven_letter": "GUNNISN",
+            "fourteen_letter": "GUNNISON"
+        },
+        "name": "Gunnison",
+        "zone": 2,
+        "api_code": "051",
+        "geojson_id": 272,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "YD-YE"
+            ],
+            "three_letter_prefix_ranges": [
+                "EYC-EZC"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "HIN",
+            "five_letter": "HINSD",
+            "seven_letter": "HINSDAL",
+            "fourteen_letter": "HINSDALE"
+        },
+        "name": "Hinsdale",
+        "zone": 3,
+        "api_code": "053",
+        "geojson_id": 273,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "ZN"
+            ],
+            "three_letter_prefix_ranges": [
+                "EZD-EZE"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "HRF",
+            "five_letter": "HUERF",
+            "seven_letter": "HUERFAN",
+            "fourteen_letter": "HUERFANO"
+        },
+        "name": "Huerfano",
+        "zone": 3,
+        "api_code": "055",
+        "geojson_id": 274,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "VE"
+            ],
+            "three_letter_prefix_ranges": [
+                "EZF-EZW"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "JKS",
+            "five_letter": "JACKS",
+            "seven_letter": "JACKSON",
+            "fourteen_letter": "JACKSON"
+        },
+        "name": "Jackson",
+        "zone": 3,
+        "api_code": "057",
+        "geojson_id": 275,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "ZJ"
+            ],
+            "three_letter_prefix_ranges": [
+                "FGC-FGH"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "JFR",
+            "five_letter": "JEFFR",
+            "seven_letter": "JEFFERS",
+            "fourteen_letter": "JEFFERSON"
+        },
+        "name": "Jefferson",
+        "zone": 0,
+        "api_code": "059",
+        "geojson_id": 276,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "RS-TD",
+                "HG-HW"
+            ],
+            "three_letter_prefix_ranges": [
+                "GAA-JZZ"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "KWA",
+            "five_letter": "KIOWA",
+            "seven_letter": "KIOWA",
+            "fourteen_letter": "KIOWA"
+        },
+        "name": "Kiowa",
+        "zone": 3,
+        "api_code": "061",
+        "geojson_id": 277,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "YP"
+            ],
+            "three_letter_prefix_ranges": [
+                "WUS-WUY"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "KCR",
+            "five_letter": "KITCR",
+            "seven_letter": "KITCRSN",
+            "fourteen_letter": "KITCARSON"
+        },
+        "name": "Kit Carson",
+        "zone": 3,
+        "api_code": "063",
+        "geojson_id": 278,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "WU-WV"
+            ],
+            "three_letter_prefix_ranges": [
+                "WUZ-WVV"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "LAK",
+            "five_letter": "LAKE",
+            "seven_letter": "LAKE",
+            "fourteen_letter": "LAKE"
+        },
+        "name": "Lake",
+        "zone": 2,
+        "api_code": "065",
+        "geojson_id": 279,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "YF-YH"
+            ],
+            "three_letter_prefix_ranges": [
+                "FCD-FDE"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "LPT",
+            "five_letter": "LPLAT",
+            "seven_letter": "LAPLATA",
+            "fourteen_letter": "LAPLATA"
+        },
+        "name": "La Plata",
+        "zone": 2,
+        "api_code": "067",
+        "geojson_id": 280,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "VV-VY"
+            ],
+            "three_letter_prefix_ranges": [
+                "FDF-FGB"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "LAR",
+            "five_letter": "LARIM",
+            "seven_letter": "LARIMER",
+            "fourteen_letter": "LARIMER"
+        },
+        "name": "Larimer",
+        "zone": 2,
+        "api_code": "069",
+        "geojson_id": 281,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "LU-MK",
+                "FX-FY"
+            ],
+            "three_letter_prefix_ranges": [
+                "FHA-FZZ"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "LAS",
+            "five_letter": "LSANM",
+            "seven_letter": "LSANMAS",
+            "fourteen_letter": "LASANIMAS"
+        },
+        "name": "Las Animas",
+        "zone": 3,
+        "api_code": "071",
+        "geojson_id": 282,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "LM-LN"
+            ],
+            "three_letter_prefix_ranges": [
+                "UAA-UBK"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "LIN",
+            "five_letter": "LINCL",
+            "seven_letter": "LINCOLN",
+            "fourteen_letter": "LINCOLN"
+        },
+        "name": "Lincoln",
+        "zone": 3,
+        "api_code": "073",
+        "geojson_id": 283,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "XP-XR"
+            ],
+            "three_letter_prefix_ranges": [
+                "UBL-UCA"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "LOG",
+            "five_letter": "LOGAN",
+            "seven_letter": "LOGAN",
+            "fourteen_letter": "LOGAN"
+        },
+        "name": "Logan",
+        "zone": 3,
+        "api_code": "075",
+        "geojson_id": 284,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "UG-UJ"
+            ],
+            "three_letter_prefix_ranges": [
+                "UCB-UEH"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "MES",
+            "five_letter": "MESA",
+            "seven_letter": "MESA",
+            "fourteen_letter": "MESA"
+        },
+        "name": "Mesa",
+        "zone": 2,
+        "api_code": "077",
+        "geojson_id": 285,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "NG-NT"
+            ],
+            "three_letter_prefix_ranges": [
+                "UEJ-UNL"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "MIN",
+            "five_letter": "MINRL",
+            "seven_letter": "MINERAL",
+            "fourteen_letter": "MINERAL"
+        },
+        "name": "Mineral",
+        "zone": 3,
+        "api_code": "079",
+        "geojson_id": 286,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "ZM"
+            ],
+            "three_letter_prefix_ranges": [
+                "UNM-UNR"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "MFT",
+            "five_letter": "MOFFT",
+            "seven_letter": "MOFFAT",
+            "fourteen_letter": "MOFFAT"
+        },
+        "name": "Moffat",
+        "zone": 2,
+        "api_code": "081",
+        "geojson_id": 287,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "YJ-YK"
+            ],
+            "three_letter_prefix_ranges": [
+                "UNS-UPX"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "MTZ",
+            "five_letter": "MNTZM",
+            "seven_letter": "MNTZUMA",
+            "fourteen_letter": "MONTEZUMA"
+        },
+        "name": "Montezuma",
+        "zone": 2,
+        "api_code": "083",
+        "geojson_id": 288,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "XL-XN"
+            ],
+            "three_letter_prefix_ranges": [
+                "UPY-USL"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "MTR",
+            "five_letter": "MNTRO",
+            "seven_letter": "MONTRSE",
+            "fourteen_letter": "MONTROSE"
+        },
+        "name": "Montrose",
+        "zone": 2,
+        "api_code": "085",
+        "geojson_id": 289,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "WB-WD"
+            ],
+            "three_letter_prefix_ranges": [
+                "USM-UUZ"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "MGN",
+            "five_letter": "MORGN",
+            "seven_letter": "MORGAN",
+            "fourteen_letter": "MORGAN"
+        },
+        "name": "Morgan",
+        "zone": 2,
+        "api_code": "087",
+        "geojson_id": 290,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "UW-UY"
+            ],
+            "three_letter_prefix_ranges": [
+                "UVA-UXR"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "OTR",
+            "five_letter": "OTERO",
+            "seven_letter": "OTERO",
+            "fourteen_letter": "OTERO"
+        },
+        "name": "Otero",
+        "zone": 3,
+        "api_code": "089",
+        "geojson_id": 291,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "PA-PC"
+            ],
+            "three_letter_prefix_ranges": [
+                "UXS-UZZ"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "OUR",
+            "five_letter": "OURAY",
+            "seven_letter": "OURAY",
+            "fourteen_letter": "OURAY"
+        },
+        "name": "Ouray",
+        "zone": 3,
+        "api_code": "091",
+        "geojson_id": 292,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "ZF"
+            ],
+            "three_letter_prefix_ranges": [
+                "VAA-VAG"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "PAR",
+            "five_letter": "PARK",
+            "seven_letter": "PARK",
+            "fourteen_letter": "PARK"
+        },
+        "name": "Park",
+        "zone": 3,
+        "api_code": "093",
+        "geojson_id": 293,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "ZD"
+            ],
+            "three_letter_prefix_ranges": [
+                "VAH-VBA"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "PHI",
+            "five_letter": "PHILL",
+            "seven_letter": "PHILLPS",
+            "fourteen_letter": "PHILLIPS"
+        },
+        "name": "Phillips",
+        "zone": 3,
+        "api_code": "095",
+        "geojson_id": 294,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "XY-XZ"
+            ],
+            "three_letter_prefix_ranges": [
+                "VBB-VBR"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "PIT",
+            "five_letter": "PITKN",
+            "seven_letter": "PITKIN",
+            "fourteen_letter": "PITKIN"
+        },
+        "name": "Pitkin",
+        "zone": 2,
+        "api_code": "097",
+        "geojson_id": 295,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "ZG-ZP"
+            ],
+            "three_letter_prefix_ranges": [
+                "VBS-VDM"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "PRW",
+            "five_letter": "PROWR",
+            "seven_letter": "PROWERS",
+            "fourteen_letter": "PROWERS"
+        },
+        "name": "Prowers",
+        "zone": 3,
+        "api_code": "099",
+        "geojson_id": 296,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "VG-VH"
+            ],
+            "three_letter_prefix_ranges": [
+                "VDN-VEY"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "PUB",
+            "five_letter": "PUEBL",
+            "seven_letter": "PUEBLO",
+            "fourteen_letter": "PUEBLO"
+        },
+        "name": "Pueblo",
+        "zone": 2,
+        "api_code": "101",
+        "geojson_id": 297,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "GP-HD"
+            ],
+            "three_letter_prefix_ranges": [
+                "VEC-VVC"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "RBL",
+            "five_letter": "RBLNC",
+            "seven_letter": "RBLANCO",
+            "fourteen_letter": "RIOBLANCO"
+        },
+        "name": "Rio Blanco",
+        "zone": 3,
+        "api_code": "103",
+        "geojson_id": 298,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "YV-YW"
+            ],
+            "three_letter_prefix_ranges": [
+                "VVD-VVV"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "RGR",
+            "five_letter": "RGRAN",
+            "seven_letter": "RGRANDE",
+            "fourteen_letter": "RIOGRANDE"
+        },
+        "name": "Rio Grande",
+        "zone": 3,
+        "api_code": "105",
+        "geojson_id": 299,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "WJ-WL"
+            ],
+            "three_letter_prefix_ranges": [
+                "VVW-VWZ"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "RTT",
+            "five_letter": "ROUTT",
+            "seven_letter": "ROUTT",
+            "fourteen_letter": "ROUTT"
+        },
+        "name": "Routt",
+        "zone": 2,
+        "api_code": "107",
+        "geojson_id": 300,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "WZ-XA"
+            ],
+            "three_letter_prefix_ranges": [
+                "VXA-VYN"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "SAG",
+            "five_letter": "SAGCH",
+            "seven_letter": "SAGCHE",
+            "fourteen_letter": "SAGUACHE"
+        },
+        "name": "Saguache",
+        "zone": 3,
+        "api_code": "109",
+        "geojson_id": 301,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "XU-XV"
+            ],
+            "three_letter_prefix_ranges": [
+                "VYP-VZA"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "SJN",
+            "five_letter": "SANJN",
+            "seven_letter": "SANJUAN",
+            "fourteen_letter": "SANJUAN"
+        },
+        "name": "San Juan",
+        "zone": 3,
+        "api_code": "111",
+        "geojson_id": 302,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "ZE"
+            ],
+            "three_letter_prefix_ranges": [
+                "VZB-VZE"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "SMG",
+            "five_letter": "SANMG",
+            "seven_letter": "SANMIGU",
+            "fourteen_letter": "SANMIGUEL"
+        },
+        "name": "San Miguel",
+        "zone": 2,
+        "api_code": "113",
+        "geojson_id": 303,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "YX"
+            ],
+            "three_letter_prefix_ranges": [
+                "VZF-VZR"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "SDW",
+            "five_letter": "SEDGW",
+            "seven_letter": "SEDGWIC",
+            "fourteen_letter": "SEDGWICK"
+        },
+        "name": "Sedgwick",
+        "zone": 3,
+        "api_code": "115",
+        "geojson_id": 304,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "YB-YC"
+            ],
+            "three_letter_prefix_ranges": [
+                "WNL-WNY"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "SUM",
+            "five_letter": "SUMIT",
+            "seven_letter": "SUMMIT",
+            "fourteen_letter": "SUMMIT"
+        },
+        "name": "Summit",
+        "zone": 2,
+        "api_code": "117",
+        "geojson_id": 305,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "ZL",
+                "ZR"
+            ],
+            "three_letter_prefix_ranges": [
+                "WNZ-WRM"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "TLR",
+            "five_letter": "TELLR",
+            "seven_letter": "TELLER",
+            "fourteen_letter": "TELLER"
+        },
+        "name": "Teller",
+        "zone": 2,
+        "api_code": "119",
+        "geojson_id": 306,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "YL"
+            ],
+            "three_letter_prefix_ranges": [
+                "WRN-WSR"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "WSH",
+            "five_letter": "WSHNG",
+            "seven_letter": "WSHNGT",
+            "fourteen_letter": "WASHINGTON"
+        },
+        "name": "Washington",
+        "zone": 3,
+        "api_code": "121",
+        "geojson_id": 307,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "WW"
+            ],
+            "three_letter_prefix_ranges": [
+                "WST-WTK"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "WLD",
+            "five_letter": "WELD",
+            "seven_letter": "WELD",
+            "fourteen_letter": "WELD"
+        },
+        "name": "Weld",
+        "zone": 2,
+        "api_code": "123",
+        "geojson_id": 308,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "HY-JM"
+            ],
+            "three_letter_prefix_ranges": [
+                "WAA-WNK"
+            ]
+        }
+    },
+    {
+        "abbreviations": {
+            "three_letter": "YUM",
+            "five_letter": "YUMA",
+            "seven_letter": "YUMA",
+            "fourteen_letter": "YUMA"
+        },
+        "name": "Yuma",
+        "zone": 3,
+        "api_code": "125",
+        "geojson_id": 309,
+        "license_plate_codes": {
+            "two_letter_prefix_ranges": [
+                "VS-VT"
+            ],
+            "three_letter_prefix_ranges": [
+                "WTL-WUR"
+            ]
+        }
+    }
+]
