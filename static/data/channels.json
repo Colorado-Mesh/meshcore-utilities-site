@@ -1,58 +1,58 @@
 [
-  {
-    "name": "#bot",
-    "description": "Interact with helpful bots",
-    "order": 4,
-    "key": "eb50a1bcb3e4e5d7bf69a57c9dada211",
-    "url": "meshcore://channel/add?name=%23bot&secret=eb50a1bcb3e4e5d7bf69a57c9dada211"
-  },
-  {
-    "name": "#testing",
-    "description": "Test your devices, get feedback from other mesh members.",
-    "order": 0,
-    "key": "cde5e82cf515647dcb547a79a4f065d1",
-    "url": "meshcore://channel/add?name=%23testing&secret=cde5e82cf515647dcb547a79a4f065d1"
-  },
-  {
-    "name": "#hamradio",
-    "description": "For HAM radio operators who love to geek out over antennas and noise floors.",
-    "order": 6,
-    "key": "83c8b01997654265938da8765cbc7db9",
-    "url": "meshcore://channel/add?name=%23hamradio&secret=83c8b01997654265938da8765cbc7db9"
-  },
-  {
-    "name": "#emergency",
-    "description": "Get vital broadcasts (bad weather, traffic, disasters, etc.)",
-    "order": 1,
-    "key": "e1ad578d25108e344808f30dfdaaf926",
-    "url": "meshcore://channel/add?name=%23emergency&secret=e1ad578d25108e344808f30dfdaaf926"
-  },
-  {
-    "name": "#weather",
-    "description": "See weather forecasts or casually complain about the Colorado's inconsistent seasons.",
-    "order": 2,
-    "key": "88f502554fee92a1625cfb311546e7cb",
-    "url": "meshcore://channel/add?name=%23weather&secret=88f502554fee92a1625cfb311546e7cb"
-  },
-  {
-    "name": "#sports",
-    "description": "Share the highs and the lows of Colorado sports",
-    "order": 3,
-    "key": "e8ee81f3aabf105d9ba2d2d4bd94fe4a",
-    "url": "meshcore://channel/add?name=%23sports&secret=e8ee81f3aabf105d9ba2d2d4bd94fe4a"
-  },
-  {
-    "name": "#jokes",
-    "description": "It's mostly just dad jokes.",
-    "order": 5,
-    "key": "abe610d61dee508c0ac18793c36c41c3",
-    "url": "meshcore://channel/add?name=%23jokes&secret=abe610d61dee508c0ac18793c36c41c3"
-  },
-  {
-    "name": "#cm-reach",
-    "description": "Use in conjunction with https://rangecheck.meshcore.coloradomesh.org to see how connected you are to the wider mesh",
-    "order": 7,
-    "key": "273bc42ce81b9f75c466680b73de0b7a",
-    "url": "meshcore://channel/add?name=%23cm-reach&secret=273bc42ce81b9f75c466680b73de0b7a"
-  }
+    {
+        "name": "#bot",
+        "description": "Interact with helpful bots",
+        "order": 4,
+        "key": "eb50a1bcb3e4e5d7bf69a57c9dada211",
+        "url": "meshcore://channel/add?name=%23bot&secret=eb50a1bcb3e4e5d7bf69a57c9dada211"
+    },
+    {
+        "name": "#testing",
+        "description": "Test your devices, get feedback from other mesh members.",
+        "order": 0,
+        "key": "cde5e82cf515647dcb547a79a4f065d1",
+        "url": "meshcore://channel/add?name=%23testing&secret=cde5e82cf515647dcb547a79a4f065d1"
+    },
+    {
+        "name": "#hamradio",
+        "description": "For HAM radio operators who love to geek out over antennas and noise floors.",
+        "order": 6,
+        "key": "83c8b01997654265938da8765cbc7db9",
+        "url": "meshcore://channel/add?name=%23hamradio&secret=83c8b01997654265938da8765cbc7db9"
+    },
+    {
+        "name": "#emergency",
+        "description": "Get vital broadcasts (bad weather, traffic, disasters, etc.)",
+        "order": 1,
+        "key": "e1ad578d25108e344808f30dfdaaf926",
+        "url": "meshcore://channel/add?name=%23emergency&secret=e1ad578d25108e344808f30dfdaaf926"
+    },
+    {
+        "name": "#weather",
+        "description": "See weather forecasts or casually complain about the Colorado's inconsistent seasons.",
+        "order": 2,
+        "key": "88f502554fee92a1625cfb311546e7cb",
+        "url": "meshcore://channel/add?name=%23weather&secret=88f502554fee92a1625cfb311546e7cb"
+    },
+    {
+        "name": "#sports",
+        "description": "Share the highs and the lows of Colorado sports",
+        "order": 3,
+        "key": "e8ee81f3aabf105d9ba2d2d4bd94fe4a",
+        "url": "meshcore://channel/add?name=%23sports&secret=e8ee81f3aabf105d9ba2d2d4bd94fe4a"
+    },
+    {
+        "name": "#jokes",
+        "description": "It's mostly just dad jokes.",
+        "order": 5,
+        "key": "abe610d61dee508c0ac18793c36c41c3",
+        "url": "meshcore://channel/add?name=%23jokes&secret=abe610d61dee508c0ac18793c36c41c3"
+    },
+    {
+        "name": "#cm-reach",
+        "description": "Use in conjunction with https://rangecheck.meshcore.coloradomesh.org to see how connected you are to the wider mesh",
+        "order": 7,
+        "key": "273bc42ce81b9f75c466680b73de0b7a",
+        "url": "meshcore://channel/add?name=%23cm-reach&secret=273bc42ce81b9f75c466680b73de0b7a"
+    }
 ]
