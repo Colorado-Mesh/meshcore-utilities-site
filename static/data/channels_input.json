@@ -1,0 +1,42 @@
+[
+  {
+    "order": 4,
+    "name": "#bot",
+    "description": "Interact with helpful bots"
+  },
+  {
+    "order": 0,
+    "name": "#testing",
+    "description": "Test your devices, get feedback from other mesh members."
+  },
+  {
+    "order": 6,
+    "name": "#hamradio",
+    "description": "For HAM radio operators who love to geek out over antennas and noise floors."
+  },
+  {
+    "order": 1,
+    "name": "#emergency",
+    "description": "Get vital broadcasts (bad weather, traffic, disasters, etc.)"
+  },
+  {
+    "order": 2,
+    "name": "#weather",
+    "description": "See weather forecasts or casually complain about the Colorado's inconsistent seasons."
+  },
+  {
+    "order": 3,
+    "name": "#sports",
+    "description": "Share the highs and the lows of Colorado sports"
+  },
+  {
+    "order": 5,
+    "name": "#jokes",
+    "description": "It's mostly just dad jokes."
+  },
+  {
+    "order": 7,
+    "name": "#cm-reach",
+    "description": "Use in conjunction with https://rangecheck.meshcore.coloradomesh.org to see how connected you are to the wider mesh"
+  }
+]

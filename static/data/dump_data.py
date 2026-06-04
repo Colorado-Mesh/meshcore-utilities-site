@@ -19,11 +19,29 @@ class Channel:
     name: str
     order: int
     description: str
+    key: str
+    url: str
 
     def __init__(self, data: dict):
         self.name = data["name"]
         self.description = data["description"]
         self.order = data["order"]
+        self.calculate_details()
+
+    def calculate_details(self):
+        self.key, _ = get_hashtag_channel_keys(channel_name=self.name)
+        self.url = build_meshcore_channel_url(name=self.name, secret=self.key)
+
+    @property
+    def as_json(self) -> dict:
+        return {
+            "name": self.name,
+            "description": self.description,
+            "order": self.order,
+            "key": self.key,
+            "url": self.url,
+        }
+
 
 def location_to_json(location: LocationEnum) -> dict:
     return json.loads(location._location.model_dump_json())
@@ -43,10 +61,7 @@ def generate_channel_qr_code_image(channel: Channel):
     clean_name = name.replace("#", "")
     order = channel.order
 
-    key, _ = get_hashtag_channel_keys(channel_name=name)
-    url = build_meshcore_channel_url(name=name, secret=key)
-
-    qr_code_image = qrcode.make(data=url)
+    qr_code_image = qrcode.make(data=channel.url)
     qr_code_image.save(f"{CHANNELS_QR_CODE_FOLDER}/meshcore_channel_{order}_{clean_name}.png")
 
 
@@ -69,3 +84,5 @@ channels_data = read_from_file(filename=CHANNEL_DETAILS_FILE)
 channels = [Channel(data=data) for data in channels_data]
 for _channel in channels:
     generate_channel_qr_code_image(channel=_channel)
+write_to_file(data=[_channel.as_json for _channel in channels], filename="channels.json")
+
