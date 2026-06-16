@@ -1,4 +1,4 @@
-coloradomesh>=0.12.4
+coloradomesh>=0.12.5
 colorado-py>=0.4.4
 qrcode
 Pillow
