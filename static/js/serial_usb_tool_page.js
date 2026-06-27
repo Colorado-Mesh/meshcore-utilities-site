@@ -207,9 +207,11 @@ document.addEventListener('DOMContentLoaded', () => {
         commands.push({
             order: 8, type: 'wait', delayMs: 150,
         });
+        let regions = ``;
         for (const region of settings.regions.all) {
-            commands.push({order: 9, type: 'send', command: `region put ${region}`});
+            regions = regions + `${region} `;
         }
+        commands.push({order: 9, type: 'send', command: `region def ${regions}`});
         commands.push({order: 10, type: 'wait', delayMs: 1000});
         commands.push({order: 11, type: 'send', command: `region home ${settings.regions.home}`});
         commands.push({order: 12, type: 'wait', delayMs: 150});
