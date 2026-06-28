@@ -476,9 +476,9 @@
       "confirmMessage": ""
     },
     {
-      "id": "regions",
-      "label": "Region Management",
-      "description": "Inspect regions and save region configuration.",
+      "id": "view-regions",
+      "label": "View Region Configuration",
+      "description": "Inspect current regions configuration.",
       "steps": [
         {
           "type": "send",
@@ -504,6 +504,30 @@
           "type": "send",
           "command": "region get",
           "order": 5
+        }
+      ],
+      "confirm": false,
+      "confirmMessage": ""
+    },
+    {
+      "id": "default-regions",
+      "label": "Set Default Regions",
+      "description": "Apply default Colorado Mesh regions",
+      "steps": [
+        {
+          "type": "send",
+          "command": "region def als ase cez cos den dro ege fnl gjt guc hdn laa mtj pub stk tex",
+          "order": 1
+        },
+        {
+          "type": "wait",
+          "delayMs": 150,
+          "order": 2
+        },
+        {
+          "type": "send",
+          "command": "region save",
+          "order": 3
         }
       ],
       "confirm": false,
